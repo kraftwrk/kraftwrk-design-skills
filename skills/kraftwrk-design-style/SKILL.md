@@ -35,7 +35,8 @@ If the foundation skills are not installed, say so once and apply the usual indu
 - Two weights. Hierarchy by size and space before weight, and by weight before colour.
 - Sentence case.
 - Tight, confident headline tracking, generous but deliberate whitespace, an editorial rhythm.
-- Separation by spacing and subtle tints before borders, borders before shadows, never all three.
+- Separation by spacing and hairlines before tints, tints before borders, borders before shadows, never all of them.
+- Canvas chosen on purpose per product (cream, near-black or white), never mid-grey; one hero figure per screen.
 - Dark neutral palettes done properly (Linear-like restraint) when the product suits them.
 - Density matched to the job, never cluttered.
 - Press feedback on everything pressable; sheets and gestures track the finger.
@@ -60,7 +61,7 @@ If the foundation skills are not installed, say so once and apply the usual indu
 
 - Before designing: confirm the job, user, primary action, platform and design system in one line each. Ask once if something is unclear and decisive; otherwise state the assumption.
 - Design order: structure and hierarchy, then layout, type, colour, motion. Decoration last, if at all.
-- Present: the work, then a short rationale (key decisions and trade-offs), open questions, and proposed design system additions. Keep it brief.
+- Present: the work, then a short rationale (key decisions and trade-offs), open questions, and proposed design system additions. Keep it brief. For case studies and client decks, follow the presentation conventions in agency-grade-review: flat frames on a flat field in rows, one angled hero at most, component close-ups, dense screens included.
 - Corrections become rules. When Marc corrects something, propose adding it to this skill (taste) or to the relevant foundation skill (baseline) as a rule with its reason, in one line.
 
 ## Output expectations

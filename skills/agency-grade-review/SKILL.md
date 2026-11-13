@@ -36,6 +36,24 @@ Agency-grade work has all of these at once:
 
 Generic work, the level this skill lifts from, typically shows: default fonts and sizes, random spacing, cards everywhere, blue 600 everywhere, lorem ipsum or perfectly short fake data, happy path only, hover-only states, bouncy or slow motion, no dark mode, a logo-only identity, and a single centred hero shot as presentation.
 
+## Visual tells (what agency-grade screens look like, from the case studies)
+
+A quick scan before the full protocol. Observed across the published product work of Work & Co, MetaLab, Clay, Fantasy, AKQA, Framna and Wolff Olins.
+
+| Agency-grade | Generic |
+| --- | --- |
+| Canvas is a decision: warm cream, near-black, white, or the brand gradient on hero screens | Mid-grey canvas chosen by default |
+| One accent on action, selection, status or progress; roughly 5 percent of the screen or less; luxury uses none | Accent on tab bar, header, cards and buttons at once |
+| A display type voice plus a neutral workhorse; one hero figure per screen at 2 to 3 times body | Everything at similar sizes and weights; three typefaces |
+| Spacing and hairlines separate content; single-purpose cards; borderless media grids | Card soup, nested cards, bordered tiles, shadows everywhere |
+| One radius logic held constant (0 to 2, 4, 10 to 12, or 16 to 20) | Mixed radii across buttons, cards and inputs |
+| Imagery art-directed; chrome goes monochrome when imagery is the colour; text on gradient scrims | Stock photos, text on unscrimmed images, imagery competing with UI colour |
+| 3 to 5 bottom tabs, minimal header, sheets with grabbers, one full-width primary at the bottom | Hamburger menus in native apps, two filled buttons, floating action buttons by default |
+| Brand loud at launch, login, onboarding and success; quiet and monochrome in tables, carts, settings | Illustration and brand colour inside forms and tables |
+| Dark mode designed (near-black or brand-tinted canvas, lighter surfaces, 60 to 70 percent secondary text, no shadows) | Inverted light mode with grey cards and shadows |
+| Copy with personality in small moments; plain verbs on controls | Jokes on buttons, generic verbs ("Submit", "OK") everywhere |
+| Dense screens designed and shown | Only hero screens exist |
+
 ## Review protocol
 
 Work through the sections in order. List findings before fixes. Only Quick mode skips sections.
@@ -109,9 +127,17 @@ Optical alignment of icons and text, consistent radii and stroke weights, pixel-
 
 ### 12. Presentation (for deliverables, case studies and portfolio work)
 
+The conventions the agencies use when they show product work:
+
 - Context first (problem, audience, constraints), then decisions and why, then the work.
-- Real content in realistic device frames at correct scale. Multiple states. Motion shown as video or a sequence. Dense screens shown, not only heroes.
-- Before and after where there was a before. Outcomes where known.
+- Flat device frames on flat colour fields, in 3-up or 4-up rows. The field follows the product's personality: black for sport, gaming and entertainment; cream or a pale tint for lifestyle and finance; the brand colour for identity work.
+- One angled 3D device for the hero at most; everything else flat. 3D is rationed, never the default.
+- Component close-ups: one component cropped huge on a neutral field (a card, a chip set, a row) to show the craft.
+- System sheets: type sample, colours or gradients with names, a token table, an icon sheet, or a bento mosaic of system elements with construction lines.
+- Context photography when scale and use matter: the product in a hand, on a table, in a room.
+- Short captioned loops (3 to 10 seconds) for motion and interaction; one line of caption per loop.
+- Real content at correct scale, multiple states, and the dense and ugly screens (list, table, cart, settings) alongside the heroes.
+- Before and after where there was a before. Outcomes in numbers where known.
 - The typography and layout of the presentation itself meet this bar.
 
 ## Tests
@@ -123,6 +149,8 @@ Run the relevant ones and report results, not impressions.
 - Squint test: are the structure and colour stance still readable?
 - Swap test: logo replaced by a competitor's. If it still looks right there is no identity.
 - Count test: distinct font sizes, weights, colours, radii and spacing values. Report the counts.
+- Canvas and accent test: name the canvas decision in one line, then estimate the share of a working screen covered by the accent. No nameable canvas, or more than roughly 5 percent accent outside a brand moment, is a finding.
+- Hero figure test: on each screen, name the one element set at 2 to 3 times body size. None, or more than one, is a finding.
 - Worst-case data test (use break-ui when installed): longest name, 1-letter name, 0 items, 10,000 items, a 99+ badge, slow network, offline.
 - Remove-one test: remove the least necessary element. Did anything break? Repeat until something does.
 - Consistency test: 6 screens side by side. One author?
@@ -160,7 +188,7 @@ Never show a first draft that fails a Blocker: missing states, contrast failures
 
 ## Modes
 
-- Quick (about 5 minutes): sections 1, 2, 3, 5 and 7, plus the 3-second, squint and count tests. Top 5 findings.
+- Quick (about 5 minutes): the visual tells table, sections 1, 2, 3, 5 and 7, plus the 3-second, squint, count and canvas-and-accent tests. Top 5 findings.
 - Full: all sections, all relevant tests, scores.
 - Pre-ship: Full, plus accessibility measured, every state present, spec checked, platform QA on real devices noted. Any Blocker means not ready.
 

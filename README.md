@@ -59,6 +59,8 @@ Write rules strictly: values, tokens, "always" and "never". Prefer a check over 
 
 The agency level the skills aim at comes from the published work and writing of Work & Co, MetaLab, Clay, Fantasy, AKQA, Framna and Wolff Olins, plus Apple's Human Interface Guidelines, Material 3, WCAG 2.2, Emil Kowalski's design engineering rules and Vercel's Web Interface Guidelines. Agency case studies show results rather than internal standards, so the rules here are a synthesis of what their work consistently gets right, written as checkable rules.
 
+The visual evidence is in `docs/agency-visual-patterns.md`: observations from the product screenshots and videos of 18 case studies (canvas, colour economy, type, hero figures, separation, radius, imagery, navigation, brand moments, motion signatures, dark mode, and how the agencies present work). The skills encode the conclusions; the doc keeps the evidence so rules can be checked and revised.
+
 ## Layout
 
 ```
@@ -67,6 +69,8 @@ skills/
   product-brand-identity/SKILL.md
   agency-grade-review/SKILL.md
   kraftwrk-design-style/SKILL.md
+docs/
+  agency-visual-patterns.md
 ```
 
 Companion skills (not included, install from their own repos):

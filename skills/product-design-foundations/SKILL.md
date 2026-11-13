@@ -44,6 +44,8 @@ If one of these is unknown and changes the result, ask once. Otherwise state the
 - Grid per breakpoint: mobile 4 columns with 16 or 20 margins; tablet 8 columns with 24 margins; desktop 12 columns, content max width 1200 to 1440, reading column max 720.
 - Alignment: at most 2 vertical alignment edges per screen region, and everything snaps to them. Optical alignment beats mathematical alignment where icons and text meet.
 - Group by proximity and alignment first. Add a container (card, divider, background) only when proximity cannot do the job. Never a card inside a card.
+- Separation order: spacing, then a hairline (1px at 8 to 12 percent of the foreground colour on light, 12 to 16 percent on dark), then a surface tint, then a border, then a shadow. Grids of media tiles (products, covers, thumbnails) carry no borders; the gap does the work.
+- Cards are single-purpose: a sheet, a tile, a stat card. A list is rows with hairlines, not a stack of cards.
 - Density is one choice per product: compact (data tools, 32px rows), default (40px rows) or comfortable (consumer, 48 to 56px rows). Keep it consistent across screens.
 - Left-align text and controls by default in LTR languages. Centre only short, isolated content: empty states, confirmations, hero moments.
 - Responsive: design at 360, 768, 1024 and 1440 wide. Content reflows, it does not just scale. Text sizes and hit targets never drop below the floors in this file.
@@ -59,6 +61,8 @@ If one of these is unknown and changes the result, ask once. Otherwise state the
 - Weights: 2 in UI (regular 400 and medium 500 or semibold 600). A third weight only for display. Hierarchy comes from size and spacing before weight, and from weight before colour.
 - Line length: 45 to 75 characters for reading text (set max-width in ch). UI labels aim for one line, with the truncation rule defined.
 - Numbers: tabular figures wherever numbers align in columns or change in place (prices, counters, timers). Proportional figures in running text.
+- Hero figure: the one number or headline a screen exists for (balance, ETA, total, score, event title) is set 2 to 3 times the body size, with its unit, currency or label small beside or beneath it in secondary colour. One hero figure per screen; everything else steps down.
+- Observed mobile scale in agency work: headlines 24 to 32, hero figures 32 to 40, body 15 to 17, meta 12 to 13, tab labels 10 to 11 uppercase or icons only.
 - Case: one convention per product. Sentence case is the default for UI; Title Case only when the platform or brand requires it. Apply the convention everywhere, including buttons and menus.
 - Details: real ellipsis character, curly quotes, non-breaking space between number and unit, balanced headlines without orphans.
 - Typeface selection: full character set for the markets served, tabular figures, a true italic or none, weights that render well at 14px, variable font where possible, a defined loading strategy and a fallback with matched metrics.
@@ -71,6 +75,8 @@ If one of these is unknown and changes the result, ask once. Otherwise state the
 - Contrast: 4.5:1 for text under 24px, 3:1 for text 24px and above, 3:1 for component boundaries and meaningful icons. Check every text and background pair in both themes. Disabled text may fail contrast but must read as disabled by other means.
 - Never meaning by colour alone: pair colour with an icon, text or position.
 - Dark mode is designed, not inverted: desaturate accents, express elevation by surface lightness instead of shadows, soften pure white text to around 90% opacity equivalents, re-check all contrast.
+- Dark mode values that hold up: canvas between #0A0A0A and #121212, or a brand-tinted dark (navy, deep green) when the brand has a hue; surfaces 2 to 3 steps lighter than the canvas; secondary text at 60 to 70 percent white; hairlines at 12 to 16 percent white; the accent on one element per screen; no drop shadows.
+- Text over photography sits on a gradient scrim (image fading into the canvas colour) and still meets 4.5:1 against the darkest or lightest part of the scrim; never on an unscrimmed photo.
 - Elevation: one system. Light mode uses 3 shadow steps with low opacity tinted to the background hue; dark mode uses surface lightness steps. Never shadow, border and tint together on one element.
 - Gradients and glass effects only as a documented brand decision from product-brand-identity, never as a default.
 
@@ -83,8 +89,11 @@ If one of these is unknown and changes the result, ask once. Otherwise state the
 - Icons: one family, one stroke weight, one optical size system (16, 20, 24). Icons sit optically on the text baseline. Icon-only controls carry an accessible label and, on pointer devices, a tooltip.
 - Forms: label above the field (or a floating label), helper text below, validation on blur, error text that says how to fix the problem, correct input types and keyboards, autocomplete attributes, no placeholder as the only label, submit stays enabled until the request starts and then shows progress.
 - Buttons: one primary per view. Labels are verbs that name the result ("Save changes", "Send invoice"). Destructive actions look different and either confirm or offer undo.
+- Task screens on mobile end in one full-width primary action pinned above the safe area (a pill or a bar, depending on the product's radius logic); secondaries are grey pills, hairline outlines or text links, never a second filled button.
+- Sheets: bottom sheets carry a grabber, a large top radius matching the product's radius logic, hairline rows inside, and a single primary action; they track the finger and can be dismissed by drag.
+- Media and product grids: 2 columns on phones, 4 on desktop, no borders on tiles, metadata under the tile in two lines (title, then secondary in grey), price or status right-aligned or on its own line.
 - Lists and tables: defined row height, alignment by column type (numbers right, text left), sort and filter states, selection and bulk actions, and a plan for 1000 rows.
-- Navigation mirrors the platform: tab bar on iOS, bottom navigation on Android, sidebar or top bar on web. At most 5 top-level destinations. Current location is always visible.
+- Navigation mirrors the platform: tab bar on iOS, bottom navigation on Android, sidebar or top bar on web. 3 to 5 top-level destinations, labels at 10 to 11pt or icons only with accessible names. Current location is always visible. Headers stay minimal: a wordmark or title plus at most two icon buttons; no hamburger menus in native apps.
 - Feedback: every action responds within 100ms (pressed state). Anything longer than 1 second shows progress. Success is confirmed where it is not self-evident.
 - Content handling: a truncation rule per element (1-line clamp, 2-line clamp, middle truncation for file names), wrapping for long words, min-width 0 on flex children.
 
@@ -153,7 +162,8 @@ A design is finished when an engineer can build it without guessing. Specify:
 - Spacing off the scale, mixed row heights, more than 2 alignment edges per region.
 - More than 7 text sizes, 3 or more weights in UI, body text under 14px, large headlines without tightened tracking.
 - Pure grey neutrals next to a tinted palette, accent used as decoration, meaning carried by colour alone.
-- Card inside card; border, shadow and tint on the same element; dividers and whitespace doing the same job.
+- Card inside card; border, shadow and tint on the same element; dividers and whitespace doing the same job; bordered media grids; lists built as stacks of cards.
+- A mid-grey canvas chosen by default; an accent spread over tab bars, headers, cards and buttons at once; two filled buttons competing on one screen; text on unscrimmed photos.
 - Placeholder as the only label, submit disabled before the request, errors that only say "Something went wrong".
 - Happy path only, lorem ipsum, perfectly short fake names.
 - Mixed icon families or weights, emoji as icons, icon-only controls without labels.
@@ -166,8 +176,8 @@ A design is finished when an engineer can build it without guessing. Specify:
 Run this list, fix failures first, then run agency-grade-review when it is available.
 
 1. One job, one primary action, nothing that could be removed without loss?
-2. All spacing on the scale, rhythm correct, at most 2 alignment edges per region?
-3. Type within the scale, correct leading and tracking, tabular numbers where needed, one case convention?
+2. All spacing on the scale, rhythm correct, at most 2 alignment edges per region, separation by spacing and hairlines before boxes?
+3. Type within the scale, correct leading and tracking, tabular numbers where needed, one case convention, one hero figure per screen at 2 to 3 times body?
 4. Colour roles used, contrast passes in both themes, no colour-only meaning?
 5. Every component state and every screen state present?
 6. Real content including long, short, zero and many, with localisation headroom?
