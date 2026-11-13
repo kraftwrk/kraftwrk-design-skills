@@ -1,11 +1,11 @@
 ---
 name: kraftwrk-design-style
-description: Marc Luijkx's (Kraftwrk Studio) personal design signature, applied on top of product-design-foundations, product-brand-identity and the client's design system. Use for any UI, screen, component, prototype, mockup, design direction or critique Marc asks for.
+description: Marc Luijkx's (Kraftwrk Studio) personal design signature, applied on top of product-design-foundations, product-ui-patterns, product-brand-identity and the client's design system. Use for any UI, screen, component, prototype, mockup, design direction or critique Marc asks for.
 ---
 
 # Kraftwrk design style
 
-Marc's signature: what stays the same across every client while design systems change. This skill assumes product-design-foundations (the technical baseline), product-brand-identity (identity work) and agency-grade-review (the gate) are available and does not repeat them. Where the client system or the foundations leave several acceptable options, this skill decides.
+Marc's signature: what stays the same across every client while design systems change. This skill assumes product-design-foundations (the technical baseline), product-ui-patterns (the pattern library), product-brand-identity (identity work), agency-grade-review (the gate) and design-decision-log (the learning loop) are available and does not repeat them. Where the client system or the foundations leave several acceptable options, this skill decides.
 
 ## Stack
 
