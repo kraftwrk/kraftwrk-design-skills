@@ -9,7 +9,7 @@ description: Give a digital product a bespoke identity, or translate an existing
 
 Product branding: the bespoke identity of a digital product, designed together with the product. It is not corporate identity consultancy (positioning decks, logo systems for a holding company). The output is a product that is unmistakably itself on every screen while staying fully usable.
 
-This skill works on top of product-design-foundations (the technical floor) and is checked by agency-grade-review. Where the client already has a brand, this skill translates it; where the product is new, this skill creates the identity.
+This skill works on top of product-design-foundations (the technical floor, with values from Material Design 3 and Apple HIG) and product-ui-patterns (the pattern library the identity is applied to), and is checked by agency-grade-review. Where the client already has a brand, this skill translates it; where the product is new, this skill creates the identity. Decisions made while applying it are captured by design-decision-log.
 
 ## What the agencies' screens actually do
 
@@ -42,7 +42,7 @@ Make these in order, each in one line, before drawing anything. Together they ar
 3. Type voice: a display voice (bold geometric, condensed caps, serif with italic, rounded, light) for headlines and hero figures, plus a neutral workhorse for UI text. Decide size contrast (dramatic or even), case, tracking and weight; these matter more than the font name.
 4. Hero figure: the one number or headline per screen set 2 to 3 times the body size with its unit or label small beside it, and a quiet screen around it.
 5. Separation method: spacing first, hairlines second, tints third, borders fourth, shadows last. Cards are single-purpose (sheet, tile, stat card) and never nested.
-6. Radius: one logic per product, held constant. 0 to 2 (luxury, editorial), 4 (sharp and playful), 10 to 12 (friendly), 16 to 20 (soft consumer, sheets). Buttons and cards share the logic.
+6. Radius: one logic per product, held constant, from the Material 3 shape scale (0, 4, 8, 12, 16, 28, full). Sharp: 0 to 4 (luxury, editorial, playful-sharp). Friendly: 8 to 12. Soft: 16 to 28 for cards and sheets, with pills for chips and primary buttons. Buttons and cards share the logic.
 7. Imagery role: imagery is the colour (chrome goes monochrome, art direction rules become part of the system) or imagery is content inside a coloured system. Text over images gets a gradient scrim that fades into the canvas.
 8. Navigation and action chrome: native and restrained. 3 to 5 bottom tabs with tiny labels or icons only, a minimal header, sheets with grabbers, one full-width primary action at the bottom of task screens, secondaries as grey pills or hairline outlines.
 9. Brand moments: launch, login and onboarding on the full brand canvas; success with the accent or gradient; empty states with illustration; working screens monochrome.
@@ -91,7 +91,7 @@ Apply across the key flows, including the ugly ones (settings, errors, long list
 
 ### Shape and surface
 
-- Radius language: 0 to 2 (luxury, editorial), 4 (sharp and playful), 10 to 12 (friendly), 16 to 20 (soft consumer, sheets), pills for chips and primary buttons where the brand is friendly. One value per component tier (controls, containers, media) with consistent ratios between tiers, held constant across the product.
+- Radius language from the Material 3 shape scale (0, 4, 8, 12, 16, 28, full): sharp 0 to 4 (luxury, editorial, playful-sharp), friendly 8 to 12, soft 16 to 28 for cards and sheets, pills for chips and primary buttons where the brand is friendly. One value per component tier (controls, containers, media) with consistent ratios between tiers, held constant across the product.
 - Separation method: spacing first, hairlines second, tints third, borders fourth, shadows last. Single-purpose cards only; never a card inside a card.
 - Density and whitespace are brand too: generous and editorial, or compact and tool-like. Decide, then keep it.
 

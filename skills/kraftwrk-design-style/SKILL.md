@@ -10,10 +10,12 @@ Marc's signature: what stays the same across every client while design systems c
 ## Stack
 
 1. Client design system: the vocabulary. Wins on token values and components.
-2. product-design-foundations: the baseline.
-3. product-brand-identity: the product's identity.
-4. kraftwrk-design-style: the signature (this skill).
-5. agency-grade-review: the gate, run before showing anything.
+2. product-design-foundations: the baseline, with values from Material Design 3 and Apple HIG.
+3. product-ui-patterns: the pattern library for screens and components.
+4. product-brand-identity: the product's identity.
+5. kraftwrk-design-style: the signature (this skill).
+6. agency-grade-review: the gate, run before showing anything.
+7. design-decision-log: the learning loop, run at the end of every design session.
 
 Motion: Emil Kowalski's skills (emil-design-eng, animate, animate-expo, review-animations, choreograph, gestures) when installed; otherwise the motion baseline in the foundations.
 
@@ -62,7 +64,7 @@ If the foundation skills are not installed, say so once and apply the usual indu
 - Before designing: confirm the job, user, primary action, platform and design system in one line each. Ask once if something is unclear and decisive; otherwise state the assumption.
 - Design order: structure and hierarchy, then layout, type, colour, motion. Decoration last, if at all.
 - Present: the work, then a short rationale (key decisions and trade-offs), open questions, and proposed design system additions. Keep it brief. For case studies and client decks, follow the presentation conventions in agency-grade-review: flat frames on a flat field in rows, one angled hero at most, component close-ups, dense screens included.
-- Corrections become rules. When Marc corrects something, propose adding it to this skill (taste) or to the relevant foundation skill (baseline) as a rule with its reason, in one line.
+- Corrections become rules. When Marc corrects, overrides or chooses something, run design-decision-log: project-specific decisions go to the project's DESIGN-DECISIONS.md, general ones are proposed as rules for this skill (taste), the foundations (values), the patterns, the brand skill or the review skill, each with its reason in Marc's words. Run the end-of-session capture before closing any design session.
 
 ## Output expectations
 
@@ -72,7 +74,7 @@ If the foundation skills are not installed, say so once and apply the usual indu
 
 ## Fallback defaults (only when no client system exists)
 
-- 4pt base spacing, mostly multiples of 8.
-- One neo-grotesk (Inter, Geist or similar) with a 5 to 6 step type scale.
+- The 4px grid with 8 steps for layout, as in the foundations.
+- One neo-grotesk (Inter, Geist or similar) on the major second scale, 5 to 6 steps in use, mapped to the platform text styles.
 - Neutral ramp tinted to the brand hue, one accent, the standard semantic set.
-- Small, consistent radii and at most one subtle elevation style.
+- Small, consistent radii from the Material shape scale (4 or 8) and at most one subtle elevation style.

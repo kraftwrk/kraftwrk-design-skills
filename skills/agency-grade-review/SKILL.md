@@ -12,7 +12,7 @@ A structured critique that measures the distance between a design and agency-gra
 - Review mode: critiquing work (the designer's, a client's or Claude's) with findings, fixes and, when asked, scores.
 - Gate mode: the mandatory self-review Claude runs on its own UI output before showing it. Fix first, then show, then report what was fixed.
 
-Depends on product-design-foundations (the baseline), product-brand-identity (identity), the active personal style skill (for Marc: kraftwrk-design-style), Emil Kowalski's review-animations for motion and Vercel's web-design-guidelines for web code, when those are installed.
+Depends on product-design-foundations (the baseline), product-ui-patterns (the pattern library), product-brand-identity (identity), the active personal style skill (for Marc: kraftwrk-design-style), Emil Kowalski's review-animations for motion and Vercel's web-design-guidelines for web code, when those are installed. Findings that Marc overrides are signals for design-decision-log.
 
 ## The bar: what agency-grade means
 
@@ -46,7 +46,7 @@ A quick scan before the full protocol. Observed across the published product wor
 | One accent on action, selection, status or progress; roughly 5 percent of the screen or less; luxury uses none | Accent on tab bar, header, cards and buttons at once |
 | A display type voice plus a neutral workhorse; one hero figure per screen at 2 to 3 times body | Everything at similar sizes and weights; three typefaces |
 | Spacing and hairlines separate content; single-purpose cards; borderless media grids | Card soup, nested cards, bordered tiles, shadows everywhere |
-| One radius logic held constant (0 to 2, 4, 10 to 12, or 16 to 20) | Mixed radii across buttons, cards and inputs |
+| One radius logic held constant on the Material shape scale (sharp 0 to 4, friendly 8 to 12, soft 16 to 28) | Mixed radii across buttons, cards and inputs |
 | Imagery art-directed; chrome goes monochrome when imagery is the colour; text on gradient scrims | Stock photos, text on unscrimmed images, imagery competing with UI colour |
 | 3 to 5 bottom tabs, minimal header, sheets with grabbers, one full-width primary at the bottom | Hamburger menus in native apps, two filled buttons, floating action buttons by default |
 | Brand loud at launch, login, onboarding and success; quiet and monochrome in tables, carts, settings | Illustration and brand colour inside forms and tables |
@@ -69,16 +69,17 @@ State in one line each: platform, audience, the job, the design system in play, 
 - Does the flow offer an obvious next step at every point? Are back and cancel paths present?
 - Does the layout mirror the information architecture (most important is most visible)?
 
-### 2. Layout and spacing
+### 2. Layout, patterns and spacing
 
-- Are spacing values on the scale? Is the rhythm correct (inside < between < section)?
+- Which pattern from product-ui-patterns does each screen use? Is its anatomy complete and are its values on the platform metrics? A layout invented where a pattern exists, or two patterns mixed for one job, is a finding.
+- Are spacing values on the 4px grid? Is the rhythm correct (inside < between < section)?
 - Count the vertical alignment edges per region. More than 2 is a finding.
 - Is density consistent across screens? Are grid and margins consistent per breakpoint?
 - Do containers earn their place? Flag card-in-card, redundant dividers and box soup.
 
 ### 3. Typography
 
-- Count sizes and weights. More than 7 sizes, or 3 or more weights in UI text, is a finding.
+- Count sizes and weights. More than 7 sizes, sizes off the major second scale, or 3 or more weights in UI text, is a finding.
 - Are leading and tracking correct for each size? Headlines tightened, caps tracked out?
 - Are reading line lengths between 45 and 75 characters? Are truncation rules defined?
 - Are numbers tabular where they align or change? Is the case convention consistent? Are typographic details right (ellipsis, quotes, non-breaking spaces)?
