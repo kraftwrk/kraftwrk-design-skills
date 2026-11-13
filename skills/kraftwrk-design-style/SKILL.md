@@ -17,6 +17,8 @@ Marc's signature: what stays the same across every client while design systems c
 
 Motion: Emil Kowalski's skills (emil-design-eng, animate, animate-expo, review-animations, choreograph, gestures) when installed; otherwise the motion baseline in the foundations.
 
+If the foundation skills are not installed, say so once and apply the usual industry baseline (Apple HIG, Material 3, WCAG 2.2 AA, full component and screen states, design tokens) before applying this signature.
+
 ## The signature
 
 1. Subtraction first. Every element earns its place. Before adding, ask what can be removed. One primary action per screen.
