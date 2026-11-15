@@ -19,13 +19,14 @@ This skill does one thing: it writes decisions down in the right place, in a for
 4. Class level, not instance level. "The pricing card gets no shadow" protects one card. "Raised surfaces separate by surface colour, never by shadow" protects every surface. "Never use shadows" breaks inputs. Pick the narrowest level that would have prevented the correction on a different screen.
 5. Strict wording with values. Always and never, tokens, numbers, platform names. "Prefer" only when Marc framed it as a preference.
 6. Project decisions never silently override general rules. A project that breaks a rule gets a recorded exception with its reason; the rule itself changes only when Marc says it applies everywhere.
-7. Values policy: a decision that departs from Material 3 or Apple HIG is recorded as an exception with its reason, project-level by default.
+7. Values policy: a decision that departs from Material 3 or Apple HIG is recorded as an exception with its reason, project-level by default. When the guidelines themselves change (a new Material or iOS release), the values in the skills are re-checked against the live guideline pages and updated with the date and the source, after Marc has seen the diff.
 
 ## When it runs
 
 - Marc asks: "remember this", "make this a rule", "log this", "we decided", "from now on", "add that to the skill".
 - Marc corrects or overrides a design choice, chooses one variant over another, reverts something, or edits a file Claude wrote.
 - A client or project constraint contradicts a rule in the skills.
+- Material Design or the Human Interface Guidelines changed, or a platform value in the skills looks out of date: re-check it against the live guideline page and propose the update.
 - The end of a design session: run a capture pass before closing.
 
 ## Signals to collect

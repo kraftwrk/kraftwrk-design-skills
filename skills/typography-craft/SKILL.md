@@ -31,25 +31,26 @@ Values come from product-design-foundations (the major second scale mapped to Ma
 ## Scale and rhythm
 
 - Scale: major second (1.125) from the platform body size, snapped to the platform roles (Material 3 display, headline, title, body, label; iOS Large Title through Caption 2). A product uses 5 to 7 steps. See product-design-foundations for the values.
-- Line heights land on the 4px grid: 16/24, 14/20, 20/28, 24/32, 28/36, 32/40, 36/44, 45/52, 57/64. Vertical spacing between text blocks is then a multiple of 4 and the rhythm holds without a baseline grid.
+- Line heights land on the 4px grid: 16/24, 14/20, 20/28, 24/32, 28/36, 32/40, 36/44, 45/52, 57/64. Vertical spacing between text blocks is then a multiple of 4 and the rhythm holds without a baseline grid. The iOS text styles are the exception: they keep Apple's leading (17/22, 15/20, 13/18, 34/41) and the spacing between blocks carries the grid.
 - Leading tightens as size grows: around 1.5 at body, 1.3 at titles, 1.15 at display. Below 1.1 only for a single-line hero figure.
-- Tracking: 0 at body; -0.01em at 24 to 32; -0.02em at 36 and above; +0.04 to +0.08em for all caps at 11 to 14; never letter-space lower case.
-- Measure: 45 to 75 characters for reading text (max-width around 60 to 65ch at body size); 35 to 50 for captions in narrow columns; headlines break by sense, not by width, at 2 to 3 lines maximum.
+- Tracking for a brand typeface: 0 at body; -0.01em at 24 to 32; -0.02em at 36 and above; +0.04 to +0.08em for all caps at 11 to 14; never letter-space lower case. System faces keep their platform tracking instead: SF Pro adjusts it at every size (in mockups apply Apple's table, for example 17 at -0.43 and 34 at +0.40), and Roboto uses Material's per-style letter spacing (body large +0.5, label large +0.1, headlines 0).
+- Measure: 45 to 75 characters for reading text, aiming for about 60 (max-width around 60 to 65ch at body size; Material's own range is 40 to 60); 35 to 50 for captions in narrow columns; headlines break by sense, not by width, at 2 to 3 lines maximum.
 - Responsive type on the web: fluid between the compact and expanded values with a clamp (for example a headline from 32 to 48), never scaling below the platform body size; UI text does not scale with the viewport.
 - Dynamic Type on iOS and font scaling on Android are designed for, not tolerated: layouts hold at the largest accessibility sizes, with truncation rules written per element.
 
 ## Headlines and hero figures
 
-- Composition: size and weight carry the headline; colour and decoration do not. Sentence case unless the voice is caps. A headline at display size with tightened tracking, balanced line breaks and no orphans is the single most visible sign of care.
+- Composition: size and weight carry the headline; colour and decoration do not. Sentence case unless the voice is caps. A headline at display size with tuned tracking, balanced line breaks and no orphans is the single most visible sign of care.
 - Hero figures (balance, ETA, total, score): 2 to 3 times body, tabular lining figures, the unit or currency at label size beside or beneath in secondary colour, the baseline of unit and figure aligned optically. One per screen.
 - Mixed sizes in one line are a signature move when controlled: a large time with a small am/pm (Uber), a large amount with a small currency (Brand New Day, STC). The small element sits at body or label size, never at a third arbitrary size.
 - Display type over imagery sits on a gradient scrim, bottom-left, with the line length short enough to stay inside the scrim.
 - Hanging punctuation and optical margin alignment at display sizes: quotes, bullets and the first letter align to the text edge optically.
 - All-caps headlines (condensed voices) get tracking, never faux bold or faux condensed; small caps only if the font has real ones.
+- Light and thin weights are display weights: 28 and above only, never for body or labels (the HIG advises against Ultralight, Thin and Light, above all at small sizes).
 
 ## Body and UI text
 
-- Body at 16 (web, Android) or 17 (iOS), regular weight, 1.5 leading, measure 45 to 75; paragraphs separated by one line of space or 8 to 12, not both.
+- Body at 16/24 on web and Android (1.5 leading) or the iOS Body style (17/22, with loose leading for long passages), regular weight, measure 45 to 75; paragraphs separated by one line of space or 8 to 12, not both.
 - Secondary text differs by colour first (secondary foreground), size second (one step down), weight never. Tertiary text is for timestamps and meta only.
 - Labels, buttons and tabs at 14 to 17 medium; label text never below 11, caps labels never below 11 with +0.04em or more.
 - Truncation rules per element: 1-line clamp with an ellipsis for titles in lists, 2-line clamp for cards, middle truncation for file names and addresses, no truncation for amounts and dates.
@@ -79,14 +80,14 @@ Values come from product-design-foundations (the major second scale mapped to Ma
 
 - Web: preload the primary font files, subset to the languages served, font-display swap with a size-adjusted fallback so layout does not shift, variable fonts over many static files, woff2 only.
 - Check rendering at 14 and 16 on Windows (ClearType) and mid-range Android as well as macOS; a face that only looks good on a Retina Mac is not a UI face.
-- Dark mode: light text on dark reads heavier; use the same weight and reduce tracking slightly or step the weight down for display sizes; secondary text at 60 percent white, not a lighter weight.
+- Dark mode: light text on dark reads heavier; keep the weight and open the tracking slightly, or step the weight down at display sizes; secondary text at 60 percent white, not a lighter weight.
 - Minimum sizes: 11 for captions and caps labels, 12 for labels, 14 for anything the user must read, 16 or 17 for body.
 
 ## Localisation and accessibility
 
 - Text can grow 30 to 40 percent in German, Dutch, French and Finnish; headlines and buttons are designed for the longest language, not the English draft.
 - Scripts with different metrics (CJK, Arabic, Devanagari) need fallbacks with matched x-height and line heights that still land on the grid; RTL mirrors layout, not glyphs.
-- WCAG 2.2: 4.5:1 for text under 24, 3:1 at 24 and above; 1.5 line height for reading text; no all-caps paragraphs; text scalable to 200 percent on the web and the largest accessibility sizes on mobile without loss of content.
+- WCAG 2.2: 4.5:1 for text under 24, 3:1 at 24 and above; no loss of content when the reader sets line height to 1.5 and widens the spacing; no all-caps paragraphs; text scalable to 200 percent on the web and the largest accessibility sizes on mobile without loss of content.
 
 ## Type as the brand carrier
 
@@ -99,11 +100,11 @@ Values come from product-design-foundations (the major second scale mapped to Ma
 Run on any screen or system, report findings with values:
 
 1. Scale: every size on the major second scale and mapped to a platform role? No more than 7 steps in use?
-2. Rhythm: every line height a multiple of 4? Spacing between text blocks on the 4px grid?
+2. Rhythm: every line height a multiple of 4, or the iOS text style's own leading? Spacing between text blocks on the 4px grid?
 3. Hierarchy: readable in greyscale from size and spacing alone? One hero figure per screen?
 4. Families: at most one workhorse, one display face, one mono? Pairing contrasts in construction and matches in proportion?
-5. Headlines: tracking tightened at display sizes, balanced breaks, no orphans, 2 to 3 lines maximum, sentence case unless the voice is caps?
-6. Body: measure 45 to 75, leading 1.5, secondary text by colour not weight, no justified text?
+5. Headlines: tracking tightened at display sizes on brand faces (platform tracking on system faces), balanced breaks, no orphans, 2 to 3 lines maximum, sentence case unless the voice is caps?
+6. Body: measure 45 to 75, leading 1.5 or the iOS Body style, secondary text by colour not weight, no justified text?
 7. Numbers: tabular where they align or change, decimals aligned, locale separators, real minus signs, units at label size?
 8. Micro-typography: real quotes, apostrophes, ellipsis, non-breaking spaces, ligatures on for text and off for code?
 9. Truncation and localisation: a rule per element, the longest language checked, Dynamic Type and font scaling survived?
@@ -115,7 +116,7 @@ Run on any screen or system, report findings with values:
 
 - Default fonts at default sizes with default line heights; a sixth and seventh size introduced for one screen.
 - Three families; two similar grotesks; a display face used for UI labels.
-- Headlines at display size with 0 tracking and an orphan on the last line; centred multi-line headlines over a photograph without a scrim.
+- A brand face at display size with untouched tracking and an orphan on the last line; centred multi-line headlines over a photograph without a scrim.
 - Proportional figures in a table; prices that jump as they update; a hyphen as a minus sign; straight quotes.
 - Secondary text made light weight instead of secondary colour; grey text at 40 percent that fails contrast.
 - Letter-spaced lower case; faux bold; faux italic; faux small caps.

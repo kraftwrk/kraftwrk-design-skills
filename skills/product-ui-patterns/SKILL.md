@@ -63,7 +63,7 @@ How to use: name the job of the screen, pick the pattern that does that job, app
 
 - Intent: the content is the hero; chrome is minimal.
 - Anatomy: full-bleed image or video, gradient scrim fading into the canvas, headline bottom-left at headline size, one line of meta, one primary action, text-only or icon-only controls on the image.
-- Values: scrim long enough that text meets 4.5:1; headline 24 to 32 with tightened tracking; controls at 44 minimum targets.
+- Values: scrim long enough that text meets 4.5:1; headline 24 to 32 with tracking per typography-craft; controls at 44 minimum targets.
 - Variants: a card rail at the bottom (TV); a product panel overlapping the image (fashion); a camera feed instead of an image (AR).
 - Avoid: a solid bar behind the text; the accent on the image; more than three controls over the image.
 - Seen in: Gatorade (program), Fubo (featured event), LV (campaign), Harrods (new season).
@@ -112,7 +112,7 @@ How to use: name the job of the screen, pick the pattern that does that job, app
 
 ### 11. Drag-handle sheet
 
-- Anatomy: drag handle (Material 32x4, iOS 36x5), top radius (Material extra large 28 or the product's large value), optional title row, hairline rows or content, one primary action, dismiss by drag or close button.
+- Anatomy: drag handle (Material 32x4, the system grabber on iOS), top radius (Material extra large 28 or the product's large value), optional title row, hairline rows or content, one primary action, dismiss by drag or close button.
 - Values: detents at a half and a full height; content inset 16 to 24; scrim behind at 32 to 40 percent black.
 - Variants: map sheet (status and destination rows over a map); action sheet (list of actions); form sheet (one or two fields).
 - Avoid: tabs inside a sheet; two filled buttons; a sheet that cannot be dragged.
@@ -151,16 +151,16 @@ How to use: name the job of the screen, pick the pattern that does that job, app
 ### 16. Minimal header
 
 - Anatomy: title or wordmark left (or centred on iOS), up to two icon buttons right (search, notifications), optional back button left; no hamburger in native apps.
-- Values: iOS navigation bar 44, large title 34 collapsing to 17; Material top app bar 64, title 22; icon buttons 44 to 48 targets.
+- Values: iOS system navigation bar with a large title 34 collapsing to the 17 title (from iOS 26 its buttons sit on Liquid Glass and the bar takes no custom background; 44 high on iOS 18 and earlier); Material small app bar 64, title 22; icon buttons 44 to 48 targets.
 - Variants: transparent over imagery with a scrim; search field as the header on browse screens.
 - Avoid: logos on every screen; three or more icons; a title that duplicates the tab label.
 - Seen in: all 18 case studies.
 
 ### 17. Tab bar
 
-- Anatomy: 3 to 5 destinations, icon plus label or icons only with accessible names, active state by colour (or a glow on dark entertainment products), no badge unless it counts something.
-- Values: iOS 49 with 10 labels; Material 80 with 12 labels (rail from medium width); icons 24.
-- Avoid: a centre action button by default; 6 destinations; labels in Title Case when the product uses sentence case.
+- Anatomy: 3 to 5 destinations, icon plus label (the HIG asks for labels; icons only is an exception to write down, with accessible names), active state by colour (or a glow on dark entertainment products), no badge unless it counts something.
+- Values: iOS: the system tab bar, which from iOS 26 floats above content on Liquid Glass with content scrolling beneath it and an optional search tab at the trailing end (49 full-width with 10 labels on iOS 18 and earlier); Material: the flexible navigation bar, 64 with 12 labels and horizontal items at medium width (the original 80 bar is no longer recommended), rail from medium width; icons 24.
+- Avoid: a centre action button by default; 6 destinations; labels in Title Case when the product uses sentence case; a redrawn opaque tab bar on iOS 26 and later.
 - Seen in: Gatorade (4, uppercase labels), STC Bank (5), Snapchat (5), NPO Zapp (3, icons only), LV (text only).
 
 ### 18. Status tag and badge

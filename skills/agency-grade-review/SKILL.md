@@ -54,7 +54,7 @@ A quick scan before the full protocol. Observed across the published product wor
 | Copy with personality in small moments; plain verbs on controls | Jokes on buttons, generic verbs ("Submit", "OK") everywhere |
 | Dense screens designed and shown | Only hero screens exist |
 | One or two carriers pushed to an extreme, the rest on platform defaults; one recurring brand device | Everything at medium intensity, or everything loud; no device, or a logo used as one |
-| Type does the identity work: a chosen voice, tightened display tracking, tabular hero figures, real punctuation | Default font at default sizes, 0 tracking at display, straight quotes, jumping numbers |
+| Type does the identity work: a chosen voice, display tracking tuned (tightened on brand faces, platform tracking on system faces), tabular hero figures, real punctuation | Default font at default sizes, untuned display tracking, straight quotes, jumping numbers |
 
 ## Review protocol
 
@@ -83,7 +83,7 @@ State in one line each: platform, audience, the job, the design system in play, 
 
 - Run the typography review in typography-craft (12 checks). The counts below are the minimum.
 - Count sizes and weights. More than 7 sizes, sizes off the major second scale, or 3 or more weights in UI text, is a finding.
-- Are leading and tracking correct for each size? Headlines tightened, caps tracked out?
+- Are leading and tracking correct for each size? Brand-face headlines tightened, system faces on platform tracking, caps tracked out?
 - Are reading line lengths between 45 and 75 characters? Are truncation rules defined?
 - Are numbers tabular where they align or change? Is the case convention consistent? Are typographic details right (ellipsis, quotes, non-breaking spaces)?
 
@@ -113,11 +113,12 @@ Run the tests from product-brand-identity: ten decisions, default count, intensi
 
 ### 8. Motion
 
-Use review-animations when installed. Otherwise check: purpose stated, UI motion under 300ms, correct easing, interruptible, origin-aware, reduced motion handled, consistent character.
+Use review-animations when installed. Otherwise check: purpose stated, UI motion under 300ms, correct easing or springs, interruptible, origin-aware, reduced motion handled, consistent character.
 
 ### 9. Platform and accessibility
 
 - Platform conventions respected (navigation, gestures, system components)?
+- Platform currency: do bars, sheets, controls and motion match the current guidelines (iOS 26 and later: system Liquid Glass bars, no glass in the content layer; Material 3: the flexible navigation bar, spring motion)?
 - Keyboard, focus, screen reader labels, text scaling, safe areas?
 
 ### 10. Production readiness

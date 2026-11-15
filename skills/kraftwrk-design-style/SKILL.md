@@ -1,6 +1,6 @@
 ---
 name: kraftwrk-design-style
-description: Marc Luijkx's (Kraftwrk Studio) personal design signature, applied on top of product-design-foundations, product-ui-patterns, product-brand-identity and the client's design system. Use for any UI, screen, component, prototype, mockup, design direction or critique Marc asks for.
+description: Marc Luijkx's (Kraftwrk Studio) personal design signature, applied on top of product-design-foundations, typography-craft, product-ui-patterns, product-brand-identity and the client's design system. Use for any UI, screen, component, prototype, mockup, design direction or critique Marc asks for.
 ---
 
 # Kraftwrk design style

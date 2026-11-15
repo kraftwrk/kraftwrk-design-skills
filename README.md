@@ -31,7 +31,7 @@ Motion is handled by Emil Kowalski's skills (installed separately, see below). W
 
 ## Values
 
-Numbers follow Google's Material Design 3 and Apple's Human Interface Guidelines: the major second type scale (1.125) mapped to the platform text styles, the 4px grid with 8 steps for layout, the Material shape scale for radius, platform component metrics, state layers and window size classes. The skills break out only when a specific case really requires it, and the exception is written down with its reason.
+Numbers follow Google's Material Design 3 and Apple's Human Interface Guidelines: the major second type scale (1.125) mapped to the platform text styles, the 4px grid with 8 steps for layout, the Material shape scale for radius, platform component metrics, state layers and window size classes. The skills break out only when a specific case really requires it, and the exception is written down with its reason. The values were checked against both live guidelines in November 2026 (Material 3 Expressive, iOS 26 Liquid Glass); they move with each release, and `design-decision-log` covers re-checking them.
 
 ## Install
 

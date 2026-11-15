@@ -11,7 +11,7 @@ The floor, not the ceiling. These are the rules that make a product UI technical
 
 The rules are written to be checkable. Where a rule gives a number, treat the number as the default and any deviation as something to state and justify.
 
-Values follow Google's Material Design 3 and Apple's Human Interface Guidelines: the major second type scale, the 4px grid, platform text styles, the Material shape scale, platform component metrics and state layers. Break out only when a specific case really requires it, and write the exception down with its reason.
+Values follow Google's Material Design 3 and Apple's Human Interface Guidelines: the major second type scale, the 4px grid, platform text styles, the Material shape scale, platform component metrics and state layers. Break out only when a specific case really requires it, and write the exception down with its reason. Platform values move with each release: these were checked against both guidelines in November 2026 (Material 3 Expressive, iOS 26 Liquid Glass). Where a value here and the current guideline disagree, the guideline wins and the value here gets updated.
 
 ## How skills stack
 
@@ -46,7 +46,7 @@ If one of these is unknown and changes the result, ask once. Otherwise state the
 
 - The 4px grid (Material's 4dp grid, Apple's 4pt increments): every spacing value and component size is a multiple of 4. Layout spacing uses the 8 steps: 8, 16, 24, 32, 40, 48, 64; the 4 steps (4, 12, 20) are for inside components and optical corrections. No values off the grid except documented optical corrections.
 - Rhythm: space inside a group < space between groups < space between sections, with at least a 2x step between levels (for example 8 inside, 16 between, 32 for sections).
-- Layout per Material window size class: compact (under 600) 4 columns with 16 margins (20 on larger phones per HIG); medium (600 to 839) 8 columns with 24 margins; expanded (840 and up) 12 columns with 24 margins, content max width 1200 to 1440, reading column max 720. Design at 360, 768, 1024 and 1440 as the representative widths.
+- Layout per Material window size class: compact (under 600) 4 columns with 16 margins (20 on larger phones per HIG); medium (600 to 839) 8 columns with 24 margins; expanded (840 to 1199) 12 columns with 24 margins; large (1200 to 1599) and extra-large (1600 and up) keep 12 columns and cap the content width at 1200 to 1440 or add a pane. Reading column max 720. Design at 360, 768, 1024 and 1440 as the representative widths.
 - Alignment: at most 2 vertical alignment edges per screen region, and everything snaps to them. Optical alignment beats mathematical alignment where icons and text meet.
 - Group by proximity and alignment first. Add a container (card, divider, background) only when proximity cannot do the job. Never a card inside a card.
 - Separation order: spacing, then a hairline, then a surface tint, then a border, then a shadow. Hairlines use the platform separator token (iOS separator, Material outline-variant); a custom hairline is 1px at 15 to 25 percent of the foreground colour on light and 15 to 25 percent white on dark. Grids of media tiles (products, covers, thumbnails) carry no borders; the gap does the work.
@@ -64,9 +64,9 @@ The values are here; the craft (choosing and pairing faces, composing headlines 
 - The type scale is the major second (ratio 1.125) from the platform body size, rounded to whole pixels and snapped to Material 3's named sizes: 11, 12, 14, 16, 18, 20, 22, 24, 28, 32, 36, 45, 57. A product uses 5 to 7 of these steps, mapped to the platform roles.
 - Platform roles are the reference, not a custom scale. Material 3: display 57/45/36, headline 32/28/24, title 22/16/14, body 16/14/12, label 14/12/11 (sp), with the line heights Material specifies (for example body large 16/24, headline small 24/32, display small 36/44). iOS text styles at the default size: Large Title 34, Title 1 28, Title 2 22, Title 3 20, Headline 17 semibold, Body 17, Callout 16, Subheadline 15, Footnote 13, Caption 1 12, Caption 2 11 (pt), with Dynamic Type. Web follows the Material scale with 16px body.
 - Body size: 16px on web, 17pt iOS body, 16sp Android body large. 12 and 11 are for captions and labels only, never body text.
-- Line height: Material's per-style values on Android and web (roughly 1.5 for body, 1.3 for titles, 1.1 to 1.2 for display); iOS text styles bring their own leading. Larger text gets tighter leading.
-- Tracking: 0 for body. Headlines of 24px and above: -0.01em to -0.02em. All-caps labels: +0.04 to +0.08em, never below 11px.
-- Weights: 2 in UI (regular 400 and medium 500 or semibold 600). A third weight only for display. Hierarchy comes from size and spacing before weight, and from weight before colour.
+- Line height: Material's per-style values on Android and web (roughly 1.5 for body, 1.3 for titles, 1.1 to 1.2 for display); iOS text styles bring their own leading (Body 17/22, Large Title 34/41), which is not on the 4 grid and stays as Apple set it. Larger text gets tighter leading.
+- Tracking: system faces keep their platform tracking. SF Pro adjusts it at every size (in mockups apply Apple's table, for example 17 at -0.43 and 34 at +0.40); Roboto uses Material's per-style letter spacing (body large +0.5, label large +0.1, headlines 0). For a brand typeface: 0 for body, -0.01em to -0.02em for headlines of 24px and above, +0.04 to +0.08em for all-caps labels, never below 11px.
+- Weights: 2 in UI (regular 400 and medium 500 or semibold 600). A third weight only for display; light and thin weights only at 28 and above. Hierarchy comes from size and spacing before weight, and from weight before colour.
 - Line length: 45 to 75 characters for reading text (set max-width in ch). UI labels aim for one line, with the truncation rule defined.
 - Numbers: tabular figures wherever numbers align in columns or change in place (prices, counters, timers). Proportional figures in running text.
 - Hero figure: the one number or headline a screen exists for (balance, ETA, total, score, event title) is set 2 to 3 times the body size (Material headline large 32 to display small 36, iOS Large Title 34), with its unit, currency or label small beside or beneath it in secondary colour. One hero figure per screen; everything else steps down.
@@ -87,23 +87,23 @@ The values are here; the craft (choosing and pairing faces, composing headlines 
 - Interaction states follow Material 3 state layers (hover 8 percent, focus 10 percent, pressed 10 percent, dragged 16 percent of the content colour) or iOS highlight conventions; disabled content at 38 percent, disabled containers at 12 percent.
 - Text over photography sits on a gradient scrim (image fading into the canvas colour) and still meets 4.5:1 against the darkest or lightest part of the scrim; never on an unscrimmed photo.
 - Elevation: one system. Material 3 elevation levels 0 to 5 with tonal surface colour (and shadows only where Material uses them); on iOS, system materials and background levels instead of shadows. Never shadow, border and tint together on one element.
-- Radius comes from the Material 3 shape scale: none 0, extra small 4, small 8, medium 12, large 16, extra large 28, full (pill); iOS uses continuous corners at comparable values. The brand picks one logic from this scale and holds it.
+- Radius comes from the Material 3 shape scale: none 0, extra small 4, small 8, medium 12, large 16, extra large 28, full (pill), plus the Material 3 Expressive steps large increased 20, extra large increased 32 and extra extra large 48; iOS uses continuous corners at comparable values. The brand picks one logic from this scale and holds it.
 - Gradients and glass effects only as a documented brand decision from product-brand-identity, never as a default.
 
 ## Components and states
 
 - Every interactive component defines: default, hover (pointer devices only), focus-visible, pressed, disabled, loading, selected or checked, error where it carries input, and read-only where relevant.
 - Every screen or container defines: empty on first use, empty after filtering, loading (skeleton that matches the final layout), partial or paginated, error with a recovery action, offline, and success or confirmation.
-- Sizes come from the platform metrics: Material buttons 40 high (48 touch target), chips 32, text fields 56, list items 56 (one line) / 72 (two lines) / 88 (three lines), top app bar 64, navigation bar 80, FAB 56; iOS buttons 44 to 50, table cells 44 minimum, navigation bar 44, tab bar 49, search bar 36. A product's own size set (for example sm 32, md 40, lg 48) is built on these, with consistent padding and icon size per size. No ad-hoc heights.
+- Sizes come from the platform metrics. Material: buttons 40 high (the default small size, 48 touch target), chips 32, text fields 56, list items 56 (one line) / 72 (two lines) / 88 (three lines), small app bar 64, navigation bar 64 (the flexible navigation bar; the original 80 bar is no longer recommended), FAB 56. iOS: buttons 44 to 50, table cells 44 minimum; bars and search fields are system components that size themselves (from iOS 26 they sit on Liquid Glass; the classic 44 navigation bar, 49 tab bar and 36 search bar apply to iOS 18 and earlier). A product's own size set (for example sm 32, md 40, lg 48) is built on these, with consistent padding and icon size per size. No ad-hoc heights.
 - Hit targets: at least 44x44pt on iOS, 48x48dp on Android, 24x24 CSS px on web with 44 recommended for touch. The visual size may be smaller than the hit target.
 - Icons: one family, one stroke weight, one optical size system (Material 20 and 24, SF Symbols scaled to the text style). Icons sit optically on the text baseline. Icon-only controls carry an accessible label and, on pointer devices, a tooltip.
 - Forms: label above the field (or a floating label), helper text below, validation on blur, error text that says how to fix the problem, correct input types and keyboards, autocomplete attributes, no placeholder as the only label, submit stays enabled until the request starts and then shows progress.
 - Buttons: one primary per view. Labels are verbs that name the result ("Save changes", "Send invoice"). Destructive actions look different and either confirm or offer undo.
 - Task screens on mobile end in one full-width primary action pinned above the safe area (48 to 56 high; a pill or a bar, depending on the product's radius logic); secondaries are grey pills, hairline outlines or text links, never a second filled button.
-- Sheets: bottom sheets carry a drag handle (Material 32x4, iOS 36x5), a top radius from the shape scale (Material extra large 28, or the product's large value), hairline rows inside, and a single primary action; they track the finger and can be dismissed by drag.
+- Sheets: bottom sheets carry a drag handle (Material 32x4, the system grabber on iOS), a top radius from the shape scale (Material extra large 28, or the product's large value), hairline rows inside, and a single primary action; they rest at the system detents on iOS (medium and large), track the finger and can be dismissed by drag.
 - Media and product grids: 2 columns in compact, 4 in expanded, gaps of 12 or 16, no borders on tiles, metadata under the tile in two lines (title, then secondary in grey), price or status right-aligned or on its own line.
 - Lists and tables: defined row height, alignment by column type (numbers right, text left), sort and filter states, selection and bulk actions, and a plan for 1000 rows.
-- Navigation mirrors the platform: tab bar on iOS (49pt, 2 to 5 tabs, 10pt labels), navigation bar on Android (80dp, 3 to 5 destinations, 12sp labels, navigation rail from medium up), sidebar or top bar on web. 3 to 5 top-level destinations, labels or icons only with accessible names. Current location is always visible. Headers stay minimal: a wordmark or title plus at most two icon buttons; no hamburger menus in native apps.
+- Navigation mirrors the platform. iOS: the system tab bar with up to 5 tabs, single-word labels and filled symbols; from iOS 26 it floats above content on Liquid Glass, content scrolls beneath it, and a search tab can sit at the trailing end (a 49pt full-width bar with 10pt labels on iOS 18 and earlier). Android: the flexible navigation bar (64dp, 3 to 5 destinations, 12sp labels, horizontal items at medium width; the original 80dp bar is no longer recommended), navigation rail from medium up. Web: sidebar or top bar. 3 to 5 top-level destinations with labels; icons only is an exception to write down, with accessible names. Current location is always visible. Headers stay minimal: a wordmark or title plus at most two icon buttons, and no custom bar background on iOS 26 and later; no hamburger menus in native apps.
 - Feedback: every action responds within 100ms (pressed state). Anything longer than 1 second shows progress. Success is confirmed where it is not self-evident.
 - Content handling: a truncation rule per element (1-line clamp, 2-line clamp, middle truncation for file names), wrapping for long words, min-width 0 on flex children.
 
@@ -128,8 +128,8 @@ The values are here; the craft (choosing and pairing faces, composing headlines 
 
 ## Platform conventions
 
-- iOS: follow the Human Interface Guidelines. Native navigation patterns (push, modal sheet, tab bar), system gestures (back swipe), SF Pro or a brand face with matched metrics, Dynamic Type, haptics only for meaningful confirmations, safe areas, large titles where they fit. Never Android patterns on iOS (hamburger menus, snackbars).
-- Android: Material 3 behaviour (predictive back, system bars, edge to edge), ripple or an equivalent pressed feedback, bottom navigation or navigation rail, Material motion durations. Brand may override the look, never the behaviour.
+- iOS: follow the Human Interface Guidelines. Native navigation patterns (push, modal sheet, tab bar), system gestures (back swipe), SF Pro or a brand face with matched metrics, Dynamic Type, haptics only for meaningful confirmations, safe areas, large titles where they fit. From iOS 26 the system's bars, sheets and controls render on Liquid Glass: use the system components and let them bring the material, never put Liquid Glass or imitation glass in the content layer, use it on custom controls only for the most important functional elements, and avoid custom bar backgrounds and tinted bar controls. Never Android patterns on iOS (hamburger menus, snackbars).
+- Android: Material 3 behaviour (predictive back, system bars, edge to edge), ripple or an equivalent pressed feedback, the flexible navigation bar or navigation rail, Material spring motion. Brand may override the look, never the behaviour.
 - React Native and Expo: native components for inputs, pickers, sheets and navigation wherever possible. Specify what is native and what is custom. Gestures and animations run on the UI thread (Reanimated). Handle the keyboard: avoiding view, safe area, scroll into view.
 - Web: responsive from 360px, real breakpoints, URL reflects state (tabs, filters, pagination), links are links and buttons are buttons, native form elements styled rather than rebuilt where possible.
 - Desktop apps and dense web tools: keyboard shortcuts, a command palette where it fits, resizable panes, layout state that persists.
@@ -139,8 +139,9 @@ The values are here; the craft (choosing and pairing faces, composing headlines 
 Defer to Emil Kowalski's skills when installed. Otherwise:
 
 - Animate only transform and opacity. Never transition all properties.
-- UI motion stays under 300ms: micro feedback 100 to 160ms, popovers and menus 150 to 250ms (Material short 2 to 4 and medium 1). Sheets and full-screen modals are the exception and may take up to 400ms (Material medium 4; iOS push and sheet transitions run about 350ms). Exits are faster than entrances.
-- Easing: ease-out for entering and responding, ease-in-out for elements moving on screen, linear only for constant motion. Never ease-in for UI. Material 3's standard and emphasized curves and iOS springs are the defaults on their platforms.
+- UI motion stays under 300ms: micro feedback 100 to 160ms, popovers and menus 150 to 250ms. Sheets and full-screen modals are the exception and may take up to 400ms (iOS push and sheet transitions run about 350ms). Exits are faster than entrances.
+- Easing: ease-out for entering and responding, ease-in-out for elements moving on screen, linear only for constant motion. Never ease-in for UI.
+- Platform defaults are springs. iOS uses its system springs. Material 3 replaced easing and duration with spring tokens: spatial springs for position, size and shape, effects springs for colour and opacity, each in fast, default and slow. Use Material's standard scheme (minimal bounce) by default; its expressive scheme (overshoot) is a brand decision.
 - Nothing appears from scale(0). Nothing animates on keyboard-driven or very frequent actions.
 - Popovers originate from their trigger. Sheets and drawers track the finger and can be interrupted.
 - Reduced motion: fades instead of movement.
@@ -170,8 +171,8 @@ A design is finished when an engineer can build it without guessing. Specify:
 ## Anti-patterns (fix on sight)
 
 - Spacing off the 4px grid, mixed row heights, more than 2 alignment edges per region.
-- Sizes off the major second scale, more than 7 text sizes in use, 3 or more weights in UI, body text under 14px, large headlines without tightened tracking.
-- Platform metrics ignored (undersized tab bars, 36px buttons on touch, custom heights where a platform value exists) without a written reason.
+- Sizes off the major second scale, more than 7 text sizes in use, 3 or more weights in UI, body text under 14px, large brand-face headlines without tightened tracking.
+- Platform metrics ignored (36px buttons on touch, custom heights where a platform value exists) or superseded ones used (redrawn opaque iOS bars or imitation glass on iOS 26 and later, the original 80 Material navigation bar) without a written reason.
 - Pure grey neutrals next to a tinted palette, accent used as decoration, meaning carried by colour alone.
 - Card inside card; border, shadow and tint on the same element; dividers and whitespace doing the same job; bordered media grids; lists built as stacks of cards.
 - A mid-grey canvas chosen by default; an accent spread over tab bars, headers, cards and buttons at once; two filled buttons competing on one screen; text on unscrimmed photos.
@@ -194,7 +195,7 @@ Run this list, fix failures first, then run agency-grade-review when it is avail
 6. Real content including long, short, zero and many, with localisation headroom?
 7. Hit targets, keyboard, focus, screen reader labels and text scaling handled?
 8. Platform conventions respected?
-9. Motion durations, easing, interruptibility and reduced motion correct?
+9. Motion durations, easing or springs, interruptibility and reduced motion correct?
 10. Tokens only, system extended in its own language, additions flagged?
 11. Spec complete enough to build without guessing?
 12. Every value traceable to Material 3, Apple HIG or a written exception?
