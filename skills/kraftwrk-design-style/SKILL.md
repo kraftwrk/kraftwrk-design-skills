@@ -5,17 +5,18 @@ description: Marc Luijkx's (Kraftwrk Studio) personal design signature, applied 
 
 # Kraftwrk design style
 
-Marc's signature: what stays the same across every client while design systems change. This skill assumes product-design-foundations (the technical baseline), product-ui-patterns (the pattern library), product-brand-identity (identity work), agency-grade-review (the gate) and design-decision-log (the learning loop) are available and does not repeat them. Where the client system or the foundations leave several acceptable options, this skill decides.
+Marc's signature: what stays the same across every client while design systems change. This skill assumes product-design-foundations (the technical baseline), typography-craft, product-ui-patterns (the pattern library), product-brand-identity (identity work), agency-grade-review (the gate) and design-decision-log (the learning loop) are available and does not repeat them. Where the client system or the foundations leave several acceptable options, this skill decides.
 
 ## Stack
 
 1. Client design system: the vocabulary. Wins on token values and components.
 2. product-design-foundations: the baseline, with values from Material Design 3 and Apple HIG.
-3. product-ui-patterns: the pattern library for screens and components.
-4. product-brand-identity: the product's identity.
-5. kraftwrk-design-style: the signature (this skill).
-6. agency-grade-review: the gate, run before showing anything.
-7. design-decision-log: the learning loop, run at the end of every design session.
+3. typography-craft: type selection, pairing, setting and review.
+4. product-ui-patterns: the pattern library for screens and components.
+5. product-brand-identity: the product's identity.
+6. kraftwrk-design-style: the signature (this skill).
+7. agency-grade-review: the gate, run before showing anything.
+8. design-decision-log: the learning loop, run at the end of every design session.
 
 Motion: Emil Kowalski's skills (emil-design-eng, animate, animate-expo, review-animations, choreograph, gestures) when installed; otherwise the motion baseline in the foundations.
 

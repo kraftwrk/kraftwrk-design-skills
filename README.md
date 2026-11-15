@@ -2,16 +2,17 @@
 
 Agent skills that make Claude (and other coding agents) design digital products at the level of top product design agencies, with Marc Luijkx's personal signature on top, and that learn from the decisions Marc makes on real projects.
 
-A skill is a folder with a `SKILL.md` file: rules an agent loads when the task matches the skill's description. These six stack on top of each other and on top of whatever client design system is in play.
+A skill is a folder with a `SKILL.md` file: rules an agent loads when the task matches the skill's description. These seven stack on top of each other and on top of whatever client design system is in play.
 
 ## The stack
 
 ```
-7. design-decision-log        the learning loop: project decisions become rules or project records
-6. agency-grade-review        the gate: critique and self-review before anything is shown
-5. kraftwrk-design-style      Marc's signature: the choices that stay the same across clients
-4. product-brand-identity     the product's bespoke identity, or a client brand translated into UI
-3. product-ui-patterns        the pattern library: screens and components with anatomy and values
+8. design-decision-log        the learning loop: project decisions become rules or project records
+7. agency-grade-review        the gate: critique and self-review before anything is shown
+6. kraftwrk-design-style      Marc's signature: the choices that stay the same across clients
+5. product-brand-identity     the product's bespoke identity, or a client brand translated into UI
+4. product-ui-patterns        the pattern library: screens and components with anatomy and values
+3. typography-craft           type selection, pairing, setting, numerals, micro-typography, review
 2. product-design-foundations the technical baseline, with values from Material Design 3 and Apple HIG
 1. client design system       the vocabulary: tokens, components, brand assets (per client, not in this repo)
 ```
@@ -21,6 +22,7 @@ Motion is handled by Emil Kowalski's skills (installed separately, see below). W
 | Skill | Use it when |
 | --- | --- |
 | `product-design-foundations` | Designing, building, prototyping or specifying any screen, component, flow or design system |
+| `typography-craft` | Choosing or pairing typefaces, setting a scale or text styles, composing headlines and hero figures, numerals, reviewing type |
 | `product-ui-patterns` | Composing a screen or component; picking the right pattern for a job |
 | `product-brand-identity` | A product needs an identity or direction, a brand has to show up in UI, or work looks generic |
 | `agency-grade-review` | Reviewing, critiquing, rating or shipping design work; also runs automatically as self-review |
@@ -70,6 +72,7 @@ The visual evidence is in `docs/agency-visual-patterns.md`: observations from th
 ```
 skills/
   product-design-foundations/SKILL.md
+  typography-craft/SKILL.md
   product-ui-patterns/SKILL.md
   product-brand-identity/SKILL.md
   agency-grade-review/SKILL.md
@@ -79,8 +82,20 @@ docs/
   agency-visual-patterns.md
 templates/
   DESIGN-DECISIONS.md
+prompts/
+  improve-the-skills.md
+  calibrate-taste.md
 CHANGELOG.md
 ```
+
+## Improving the skills over time
+
+Two reusable prompts live in `prompts/`:
+
+- `improve-the-skills.md`: an evaluation loop. Claude designs three test briefs using only the skills, reviews its own output with agency-grade-review, treats every finding the skills failed to prevent as a missing rule, studies new sources for the weakest area, and proposes diffs.
+- `calibrate-taste.md`: taste calibration from Marc's own work. Marc supplies screens he is proud of and screens he would never ship; Claude derives rules and reference notes from the difference.
+
+Run the first every month or after a big project; run the second once, then whenever the portfolio grows.
 
 Companion skills (not included, install from their own repos):
 

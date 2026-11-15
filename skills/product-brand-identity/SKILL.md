@@ -32,6 +32,7 @@ Observed in the product screenshots and videos of their published case studies (
 5. Brand serves the job. Where the user works (forms, tables, settings, payment), brand steps back into typography, spacing and tone. Where the user pauses (onboarding, empty states, success, app icon, marketing), brand steps forward.
 6. Break one category convention on purpose and keep the rest. Users must recognise the category; the brand must be recognisable within it.
 7. Identity has to survive production: screen-tested type, contrast-safe colour, token-ready values, motion that holds 60fps on a mid-range Android phone.
+8. Intensity, not volume. A bespoke identity pushes one or two carriers to an extreme (an enormous light amount, a total absence of accent, a focus state that floods with colour, condensed caps everywhere) and keeps every other decision on the platform defaults. Everything at medium is generic; everything loud is noise.
 
 ## The ten decisions that make a product identity
 
@@ -46,7 +47,7 @@ Make these in order, each in one line, before drawing anything. Together they ar
 7. Imagery role: imagery is the colour (chrome goes monochrome, art direction rules become part of the system) or imagery is content inside a coloured system. Text over images gets a gradient scrim that fades into the canvas.
 8. Navigation and action chrome: native and restrained. 3 to 5 bottom tabs with tiny labels or icons only, a minimal header, sheets with grabbers, one full-width primary action at the bottom of task screens, secondaries as grey pills or hairline outlines.
 9. Brand moments: launch, login and onboarding on the full brand canvas; success with the accent or gradient; empty states with illustration; working screens monochrome.
-10. Motion signature: one recurring move tied to the brand idea (state-encoding colour, tap-to-add, focus fill, a launch burst), with everything else fast and plain.
+10. Signature: one recurring brand device (a frame, an arrow, a shape family, an orb) and one recurring motion move (state-encoding colour, tap-to-add, focus fill, a launch burst), both tied to the brand idea, with everything else fast and plain.
 
 ## Process
 
@@ -62,6 +63,8 @@ Make these in order, each in one line, before drawing anything. Together they ar
 ### 2. Directions (2 or 3, deliberately different)
 
 Each direction contains: type choice, colour stance, shape language, one hero screen, one dense working screen, the app icon or logo lockup, and 3 lines of copy in its voice. Name each direction after its idea, not after its look. Judge directions on the dense screen as much as on the hero; a direction that only works on the hero is a poster, not a product identity.
+
+Method, so the directions are actually different: write the ten decisions as a matrix (ten rows, one column per direction). Directions must differ in at least three decisions, must each push a different carrier to its extreme (one pushes type, one pushes canvas or colour, one pushes imagery or motion), and must each pick a different convention to break. Pull options from the catalogues below. If two columns read the same at a glance, one of them is not a direction.
 
 ### 3. System
 
@@ -124,10 +127,91 @@ Apply across the key flows, including the ugly ones (settings, errors, long list
 - Tone shifts by moment: warmest in onboarding and success, plainest in errors, money and permissions.
 - Personality lives in the small moments (empty states, confirmations, loading copy), not in every label.
 
+### Brand device
+
+- One graphic element derived from the brand idea that recurs across product and marketing and that no competitor has: a frame, an arrow, a shape family, a halftone, a glitch, an orb, a pattern of the product itself. It is the most recognisable bespoke element in agency work and the one most often missing from generic products.
+- Define it once (construction, proportions, colour behaviour, motion if any) and give it 3 to 5 named places: launch, empty states, section openers, marketing heroes, the app icon. Outside those places it does not appear.
+- The device may become the icon geometry, the loading indicator or the signature motion, but it is never wallpaper behind content.
+
 ### Logo and lockups in product
 
 - The logo appears in the app icon, launch screen, about and auth screens, and marketing. It does not sit in every screen header unless the platform convention expects it (web top-left home link).
 - Never stretch brand elements into UI decoration: logo shapes as backgrounds, brand pattern on every surface, mascots in forms.
+
+## Catalogues: options observed in agency work
+
+Menus to choose from when making the ten decisions. Each option names the signal it sends and where it was seen. Pick deliberately; the first option in each list is the generic default.
+
+### Type voices (see typography-craft for the setting rules)
+
+| Voice | Signals | Seen in |
+| --- | --- | --- |
+| Neutral grotesk, medium weight, even scale | Utility, nothing in particular (the default) | Most SaaS |
+| Bold geometric grotesk, tight tracking, set large | Confidence, energy, modern mobility | Uber, Instacart, Gatorade |
+| Light humanist or grotesk at large sizes, generous leading | Calm, trust, premium service | Aesop, Brand New Day |
+| Condensed uppercase display | Speed, sport, youth, events | Joe & The Juice, Fubo, Fortnite Party Hub |
+| Serif display with italic, grotesk for UI | Luxury, editorial, heritage | Harrods, Eden (Clay), Brand New Day titles |
+| Rounded geometric | Friendly, approachable, consumer finance and wellbeing | STC Bank, Headspace |
+| Thin monoline, wide spacing | Precision, craft, quiet luxury | Montblanc |
+| Geometric caps at small size, widely tracked | Fashion luxury | Louis Vuitton |
+| Grotesk plus a mono accent for data | Technical, trading, developer tools | (general, not in the 18) |
+
+### Colour stances
+
+| Stance | Signals | Seen in |
+| --- | --- | --- |
+| White canvas, one blue accent | Default SaaS | Most products |
+| Neutral canvas, one non-blue accent used scarcely | Clarity with a point of view | Uber (black, blue), Epic (blue badge only), STC light |
+| Brand gradient as the canvas of hero screens, white type | Warmth and momentum in finance and sport | Brand New Day, Gatorade day card |
+| Near-black with one luminous accent | Performance, entertainment, night | Fubo, NPO Zapp, Gatorade |
+| Warm cream or paper with deep ink | Lifestyle, wellbeing, craft, food | Aesop, Headspace, Instacart |
+| Pastel colour blocks with one hot action colour | Playful retail | Joe & The Juice |
+| Monochrome chrome, imagery is the colour | Fashion, luxury, media | LV, Harrods, Aesop |
+| Categorical set for content categories | Libraries and programmes | Headspace, STC chips |
+
+### Imagery art directions
+
+| Direction | Rules it comes with | Seen in |
+| --- | --- | --- |
+| Editorial fashion photography, full bleed | Models and runway, text in white over scrims, no product cut-outs | LV, Harrods |
+| Product still life with controlled light | Low-key light, soft angled shadow, consistent backdrop, no props | Aesop |
+| Athletic lifestyle with gradient scrim | Real athletes, motion blur allowed, image fades into black | Gatorade |
+| Surreal sets in the brand colour | Built scenes, saturated monochrome backgrounds, one idea per image | Brand New Day, Instacart |
+| Product cut-outs as repeating pattern | Isolated products on pastel grounds, animated drift | Joe & The Juice |
+| Soft geometric illustration and overlays | Blob shapes in brand colours, geometric overlays on photos | Headspace |
+| Flat line and fill illustration in one brand colour | Used for empty states and feature explainers only | STC Bank |
+| Content art as the image | Game covers, programme stills, album art; chrome stays neutral | Epic, Fubo, NPO Zapp |
+
+### Brand devices
+
+| Device | How it is used | Seen in |
+| --- | --- | --- |
+| White frame around photography with the wordmark in the margin | Billboards, email, product cards | Uber |
+| Carrot-leaf arrow | Icon system, wayfinding signs, loading | Instacart |
+| Soft blob shape family | Hero backgrounds, empty states, launch | Headspace |
+| Halftone photo treatment plus diagonal bold caps | Capture and highlights features, social exports | Gatorade |
+| Glitch offset of the mark | Brand assets, stickers, transitions | TikTok |
+| State-encoding orb | Assistant persona, status, input field | Priceline Penny |
+| Oversized quote glyph | Testimonial cards | Headspace |
+| Neon outlined rounded square | Backgrounds and ranked numerals | NPO Zapp |
+| Hairline construction grid | System sheets and spec pages | Montblanc, Aesop guidelines |
+
+### Copy voices
+
+| Voice | Example | Seen in |
+| --- | --- | --- |
+| Personal utility | "Where to, Jessica?" | Uber |
+| Confident coach | "Nice work. You've completed 28% of the program." | Gatorade |
+| Playful retail | "A juicer is making your order", "Treat yourself!" | Joe & The Juice |
+| Warm plain speech in the local language | "Geld voor later, maar dan van nu" | Brand New Day |
+| Brand line that is also the interaction | "tap tap nom nom" | Instacart |
+| Luxury minimal | "Discover the collection", "Book an appointment" | Louis Vuitton |
+| Wise-cracking sidekick in system messages | Slackbot | Slack |
+
+### Convention breaks observed
+
+- Text-only bottom navigation with a tiny marker (LV). Zero accent colour in a commerce product (Aesop). Gradient text for a success number (Gatorade). Focus as a flood fill instead of an outline (Fubo). Emoji in programme titles and neon numerals (NPO Zapp). The assistant's persona doubling as its status indicator (Penny). Uppercase for every label in a food app (Joe & The Juice). A serif for screen titles inside a banking app (Brand New Day). The brand line as the add-to-cart interaction (Instacart).
+- Each break is one per product, sits on top of otherwise native structure, and is traceable to the brand idea.
 
 ## Brand moments map
 
@@ -174,6 +258,9 @@ Rule: a user working in a quiet zone should be able to forget the brand and stil
 ## Review: does the product feel like itself?
 
 - Ten decisions test: can each of the ten decisions be read off the screens in one line? A decision that cannot be named was never made.
+- Default count test: count the ten decisions sitting on the generic default (white canvas, blue accent, neutral grotesk at an even scale, no hero figure, cards, radius 8, no imagery role, standard chrome, no brand moments, no motion signature). More than six defaults means there is no identity. Agency-grade products have at least four non-default decisions, each traceable to the brand idea.
+- Intensity test: name the one or two carriers pushed to an extreme. None means the identity is timid; more than two means it is noise.
+- Device test: is there one recurring brand device, defined once and used in named places? A product with no device, or with a device used as wallpaper, is a finding.
 - Accent coverage test: estimate the share of a working screen covered by the accent. Above roughly 5 percent outside a brand moment is a finding.
 - Swap test: replace the logo with a competitor's. If the screens still look right, there is no identity.
 - Squint test: blurred, is the hierarchy still clear and the colour stance recognisable?

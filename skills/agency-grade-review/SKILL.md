@@ -12,7 +12,7 @@ A structured critique that measures the distance between a design and agency-gra
 - Review mode: critiquing work (the designer's, a client's or Claude's) with findings, fixes and, when asked, scores.
 - Gate mode: the mandatory self-review Claude runs on its own UI output before showing it. Fix first, then show, then report what was fixed.
 
-Depends on product-design-foundations (the baseline), product-ui-patterns (the pattern library), product-brand-identity (identity), the active personal style skill (for Marc: kraftwrk-design-style), Emil Kowalski's review-animations for motion and Vercel's web-design-guidelines for web code, when those are installed. Findings that Marc overrides are signals for design-decision-log.
+Depends on product-design-foundations (the baseline), typography-craft (type), product-ui-patterns (the pattern library), product-brand-identity (identity), the active personal style skill (for Marc: kraftwrk-design-style), Emil Kowalski's review-animations for motion and Vercel's web-design-guidelines for web code, when those are installed. Findings that Marc overrides are signals for design-decision-log.
 
 ## The bar: what agency-grade means
 
@@ -53,6 +53,8 @@ A quick scan before the full protocol. Observed across the published product wor
 | Dark mode designed (near-black or brand-tinted canvas, lighter surfaces, 60 to 70 percent secondary text, no shadows) | Inverted light mode with grey cards and shadows |
 | Copy with personality in small moments; plain verbs on controls | Jokes on buttons, generic verbs ("Submit", "OK") everywhere |
 | Dense screens designed and shown | Only hero screens exist |
+| One or two carriers pushed to an extreme, the rest on platform defaults; one recurring brand device | Everything at medium intensity, or everything loud; no device, or a logo used as one |
+| Type does the identity work: a chosen voice, tightened display tracking, tabular hero figures, real punctuation | Default font at default sizes, 0 tracking at display, straight quotes, jumping numbers |
 
 ## Review protocol
 
@@ -79,6 +81,7 @@ State in one line each: platform, audience, the job, the design system in play, 
 
 ### 3. Typography
 
+- Run the typography review in typography-craft (12 checks). The counts below are the minimum.
 - Count sizes and weights. More than 7 sizes, sizes off the major second scale, or 3 or more weights in UI text, is a finding.
 - Are leading and tracking correct for each size? Headlines tightened, caps tracked out?
 - Are reading line lengths between 45 and 75 characters? Are truncation rules defined?
@@ -106,7 +109,7 @@ State in one line each: platform, audience, the job, the design system in play, 
 
 ### 7. Identity
 
-Run the tests from product-brand-identity: swap, one-author, moments and idea tests. Flag trend used as identity, brand as decoration, and a generic SaaS look where a bespoke identity was asked for.
+Run the tests from product-brand-identity: ten decisions, default count, intensity, device, swap, one-author, moments and idea tests. Flag trend used as identity, brand as decoration, and a generic SaaS look where a bespoke identity was asked for.
 
 ### 8. Motion
 
@@ -152,6 +155,8 @@ Run the relevant ones and report results, not impressions.
 - Count test: distinct font sizes, weights, colours, radii and spacing values. Report the counts.
 - Canvas and accent test: name the canvas decision in one line, then estimate the share of a working screen covered by the accent. No nameable canvas, or more than roughly 5 percent accent outside a brand moment, is a finding.
 - Hero figure test: on each screen, name the one element set at 2 to 3 times body size. None, or more than one, is a finding.
+- Default count test: count the ten identity decisions sitting on the generic default. More than six is no identity; agency-grade work has at least four non-default decisions traceable to the brand idea.
+- Intensity test: name the one or two carriers pushed to an extreme. None is timid, more than two is noise.
 - Worst-case data test (use break-ui when installed): longest name, 1-letter name, 0 items, 10,000 items, a 99+ badge, slow network, offline.
 - Remove-one test: remove the least necessary element. Did anything break? Repeat until something does.
 - Consistency test: 6 screens side by side. One author?

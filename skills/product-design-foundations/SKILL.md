@@ -17,11 +17,12 @@ Values follow Google's Material Design 3 and Apple's Human Interface Guidelines:
 
 1. The client's design system (tokens, components, brand assets): the vocabulary. It wins on names and values.
 2. product-design-foundations (this skill): the technical baseline.
-3. product-ui-patterns: the pattern library (screens and components with their anatomy and values).
-4. product-brand-identity: how the product gets or expresses its identity.
-5. A personal or studio style skill (for Marc: kraftwrk-design-style): the signature.
-6. agency-grade-review: the gate. Run it before showing work.
-7. design-decision-log: the learning loop. Decisions made in a project become rules in these skills or a record in the project.
+3. typography-craft: how type is chosen, paired, set and reviewed.
+4. product-ui-patterns: the pattern library (screens and components with their anatomy and values).
+5. product-brand-identity: how the product gets or expresses its identity.
+6. A personal or studio style skill (for Marc: kraftwrk-design-style): the signature.
+7. agency-grade-review: the gate. Run it before showing work.
+8. design-decision-log: the learning loop. Decisions made in a project become rules in these skills or a record in the project.
 
 Motion: when Emil Kowalski's skills are installed (emil-design-eng, animate, animate-expo, review-animations, choreograph, gestures, animation-performance), they govern all motion work and take precedence over the motion section below. Web code review: use Vercel's web-design-guidelines skill when it is installed.
 
@@ -57,6 +58,8 @@ If one of these is unknown and changes the result, ask once. Otherwise state the
 - Scrolling: one scroll container per screen unless a nested one is intentional (horizontal carousel, code block). Sticky headers compress; they do not vanish abruptly.
 
 ## Typography
+
+The values are here; the craft (choosing and pairing faces, composing headlines and hero figures, numerals, micro-typography, rendering) is in typography-craft.
 
 - The type scale is the major second (ratio 1.125) from the platform body size, rounded to whole pixels and snapped to Material 3's named sizes: 11, 12, 14, 16, 18, 20, 22, 24, 28, 32, 36, 45, 57. A product uses 5 to 7 of these steps, mapped to the platform roles.
 - Platform roles are the reference, not a custom scale. Material 3: display 57/45/36, headline 32/28/24, title 22/16/14, body 16/14/12, label 14/12/11 (sp), with the line heights Material specifies (for example body large 16/24, headline small 24/32, display small 36/44). iOS text styles at the default size: Large Title 34, Title 1 28, Title 2 22, Title 3 20, Headline 17 semibold, Body 17, Callout 16, Subheadline 15, Footnote 13, Caption 1 12, Caption 2 11 (pt), with Dynamic Type. Web follows the Material scale with 16px body.

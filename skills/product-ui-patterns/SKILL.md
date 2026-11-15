@@ -7,7 +7,7 @@ description: Pattern library for product UI, distilled from the screens of Work 
 
 ## What this skill is
 
-The screen and component patterns that agency-grade product work keeps reusing, written so they can be applied and checked. Each pattern names its intent, its anatomy, its values on the Material 3 and Apple HIG metrics, its variants, what to avoid, and where it was observed. Patterns implement the baseline in product-design-foundations and the identity decisions in product-brand-identity; they do not replace either.
+The screen and component patterns that agency-grade product work keeps reusing, written so they can be applied and checked. Each pattern names its intent, its anatomy, its values on the Material 3 and Apple HIG metrics, its variants, what to avoid, and where it was observed. Patterns implement the baseline in product-design-foundations, the type rules in typography-craft and the identity decisions in product-brand-identity; they do not replace any of them.
 
 How to use: name the job of the screen, pick the pattern that does that job, apply its anatomy with the product's tokens, then adapt only where the product's identity decisions say so. A screen that needs no known pattern is rare; say so explicitly when it happens.
 
@@ -219,6 +219,44 @@ How to use: name the job of the screen, pick the pattern that does that job, app
 - Avoid: permission requests inside the carousel; two sentences; value propositions the product does not show immediately after.
 - Seen in: Penny, Headspace (web onboarding).
 
+## Web and marketing patterns
+
+### 26. Photo hero with uppercase nav
+
+- Intent: open a product or brand site with one image and one line.
+- Anatomy: full-bleed photograph or video with a gradient scrim, a thin header with the wordmark left and 4 to 6 small uppercase nav links plus one icon (search or cart) right, headline bottom-left at display size (2 lines maximum), one short line of support copy, one small pill or bar CTA; the next section starts with a brand-colour band or a tight grid.
+- Values: nav links 12 to 13 at +0.06em caps; headline 45 to 57 on expanded, 32 to 36 on compact; CTA 40 to 48 high; scrim over the lower 50 percent.
+- Variants: a looping video instead of a still; headline overlapping the image edge in a serif (editorial luxury).
+- Avoid: a centred headline with two buttons; a hero carousel; text on an unscrimmed image; a hero taller than the viewport.
+- Seen in: Gatorade.com, Harrods (new season), Headspace (web).
+
+### 27. Feature section with a device in a brand frame
+
+- Intent: explain one feature with the product itself as proof.
+- Anatomy: two columns on expanded (text 5 columns, device 7, or the reverse), eyebrow label, headline at headline size, two to three lines of body, optional text link; the device sits inside a rounded panel in the brand colour or on the dark section canvas; sections alternate sides.
+- Values: section padding 64 to 96 vertical; panel radius from the product's logic (16 to 28); device screenshot at real scale with real content; one feature per section.
+- Variants: a row of category chips above the section; a floating stat card or two over the photo (collage) when the feature is about numbers.
+- Avoid: three features per section in equal columns with icons; angled 3D devices in every section; placeholder screens.
+- Seen in: STC Bank (web), Headspace (web), Gatorade.com.
+
+### 28. Editorial story block
+
+- Intent: tell one story (collection, article, guide) with magazine pacing.
+- Anatomy: an image and a text block in a two-column relationship (image 7, text 5, or image bleeding to one edge), eyebrow in caps or small text, headline in the display voice (serif with italic for luxury), 60 to 90 words of body in a narrow column, one text link; blocks alternate image side down the page.
+- Values: body measure 45 to 65 characters; headline 32 to 45; vertical gap between blocks 64 to 96; images at consistent aspect ratios.
+- Variants: headline overlapping the image corner; three-up story cards with image, eyebrow, title and one line (Harrods "Latest trends"); a quote block with an oversized quote glyph.
+- Avoid: cards with borders and drop shadows; more than one CTA per block; stock photography.
+- Seen in: Harrods, Aesop, Headspace (article page).
+
+### 29. Brand chart
+
+- Intent: show a trend or comparison inside the product's identity, not a charting library's.
+- Anatomy: a title at title size with a period selector (chip or dropdown) right, the chart, a legend only when more than one series, axis labels at label size in secondary colour; the chart palette is two or three brand colours, the first series in the accent or the foreground.
+- Values: hairline gridlines only (or none); line weight 2 to 3; bar radius 2 to 4 or none per the product's radius logic; values tabular; one chart per card.
+- Variants: sparkline inside a stat card (no axes); stacked bars in brand colours (STC web); two-series line with a legend (Brand New Day).
+- Avoid: library default palettes; 3D or gradient fills; a chart without the question it answers in the title; more than four series.
+- Seen in: STC Bank (merchant portal and homepage), Brand New Day (returns).
+
 ## Choosing a pattern
 
 | Job of the screen | Pattern |
@@ -233,6 +271,9 @@ How to use: name the job of the screen, pick the pattern that does that job, app
 | Orient and route | 8 Dashboard home, 10 Stat card, 17 Tab bar, 16 Minimal header |
 | Act on something in context | 11 Drag-handle sheet, 15 Segmented tabs, 18 Status tag |
 | Talk to an assistant | 22 State-encoding persona |
+| Open a product or brand site | 26 Photo hero with uppercase nav, 27 Feature section with a device in a brand frame |
+| Tell a story, present a collection or article | 28 Editorial story block, 20 Quote card |
+| Show a trend or comparison | 29 Brand chart, 10 Stat card |
 
 ## Pattern review
 

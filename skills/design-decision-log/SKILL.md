@@ -1,6 +1,6 @@
 ---
 name: design-decision-log
-description: The learning loop for the Kraftwrk design skills. Captures the design decisions and corrections Marc makes during a project, keeps project-specific ones with the project, and turns general ones into rules in the right skill (kraftwrk-design-style, product-design-foundations, product-ui-patterns, product-brand-identity, agency-grade-review). Use at the end of any design session, when Marc says "remember this", "make this a rule", "log this decision", "we decided" or "from now on", after Marc corrects or overrides a design choice, and when a client decision contradicts a rule in the skills.
+description: The learning loop for the Kraftwrk design skills. Captures the design decisions and corrections Marc makes during a project, keeps project-specific ones with the project, and turns general ones into rules in the right skill (kraftwrk-design-style, product-design-foundations, typography-craft, product-ui-patterns, product-brand-identity, agency-grade-review). Use at the end of any design session, when Marc says "remember this", "make this a rule", "log this decision", "we decided" or "from now on", after Marc corrects or overrides a design choice, and when a client decision contradicts a rule in the skills.
 ---
 
 # Design decision log
@@ -59,6 +59,7 @@ Walk each decision through this tree:
   - Yes: general rule. Which skill?
     - Taste, preference, how Marc likes things: kraftwrk-design-style.
     - A number, a platform metric, a technical baseline: product-design-foundations.
+    - Typeface choice, pairing, setting, numerals, micro-typography: typography-craft.
     - A reusable screen or component layout, or a variant of one: product-ui-patterns.
     - How identity is expressed (canvas, accent, type voice, radius logic, brand moments, voice): product-brand-identity.
     - A review criterion, a test, a severity: agency-grade-review.

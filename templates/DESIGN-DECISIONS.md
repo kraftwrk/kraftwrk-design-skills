@@ -15,7 +15,9 @@ Format: date, decision in Marc's words, reason, status (active or superseded), t
 - Imagery role:
 - Navigation and action chrome:
 - Brand moments:
-- Motion signature:
+- Signature (brand device and motion move):
+- Carriers pushed to an extreme (one or two):
+- Convention broken on purpose (one):
 
 ## Decisions
 
