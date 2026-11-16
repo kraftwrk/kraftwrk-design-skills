@@ -14,6 +14,10 @@ A structured critique that measures the distance between a design and agency-gra
 
 Depends on product-design-foundations (the baseline), typography-craft (type), product-ui-patterns (the pattern library), product-brand-identity (identity), the active personal style skill (for Marc: kraftwrk-design-style), Emil Kowalski's review-animations for motion and Vercel's web-design-guidelines for web code, when those are installed. Findings that Marc overrides are signals for design-decision-log.
 
+Two reviews, one table: when Intent is installed, its evaluate skill reviews usability, task success and manipulative patterns, and this skill reviews craft, identity and platform. Report both in one findings table; Intent's critical, major, minor and cosmetic are this skill's Blocker, Major, Minor and Polish.
+
+The measured part of this review is a script: scripts/audit.py beside this file (see its README). It reads the render and reports contrast in every theme and state, counts, grid, targets, text scaling, a motion inventory and the generic tells, with values. Where the script is not at hand, measure the same things with a script written for the purpose. Never estimate.
+
 ## The bar: what agency-grade means
 
 Agency-grade work has all of these at once:
@@ -55,10 +59,11 @@ A quick scan before the full protocol. Observed across the published product wor
 | Dense screens designed and shown | Only hero screens exist |
 | One or two carriers pushed to an extreme, the rest on platform defaults; one recurring brand device | Everything at medium intensity, or everything loud; no device, or a logo used as one |
 | Type does the identity work: a chosen voice, display tracking tuned (tightened on brand faces, platform tracking on system faces), tabular hero figures, real punctuation | Default font at default sizes, untuned display tracking, straight quotes, jumping numbers |
+| A face, a canvas and a layout with a reason from this product | The reflexes of generated work: a spent typeface, a warm off-white ground by default, an italic serif hero, a tracked-caps eyebrow over every heading, a thick coloured border on one side of a card, gradient text, coloured glows, an icon in a rounded square over every feature heading, the same reveal on every section |
 
 ## Review protocol
 
-Work through the sections in order. List findings before fixes. Only Quick mode skips sections.
+Work through the sections in order. List findings before fixes. Only Quick mode skips sections. Judge before measuring: answer sections 1 to 7 from the render first, then read the audit; a clean audit is a floor, not proof. Before judging a screenshot, confirm it shows what its name says (fonts loaded, motion settled, the right theme, state and language).
 
 ### 0. Context
 
@@ -113,7 +118,7 @@ Run the tests from product-brand-identity: ten decisions, default count, intensi
 
 ### 8. Motion
 
-Use review-animations when installed. Otherwise check: purpose stated, UI motion under 300ms, correct easing or springs, interruptible, origin-aware, reduced motion handled, consistent character.
+Use review-animations when installed. Otherwise check: purpose stated, UI motion under 300ms, correct easing or springs, interruptible, origin-aware, reduced motion handled, consistent character. Read the motion inventory from the audit: every transition has a row in the motion table, nothing is invisible with animation off, hover is guarded and never moves its own target, loops carry live information.
 
 ### 9. Platform and accessibility
 
@@ -142,6 +147,7 @@ The conventions the agencies use when they show product work:
 - Context photography when scale and use matter: the product in a hand, on a table, in a room.
 - Short captioned loops (3 to 10 seconds) for motion and interaction; one line of caption per loop.
 - Real content at correct scale, multiple states, and the dense and ugly screens (list, table, cart, settings) alongside the heroes.
+- Web screens at compact (390) and expanded (1440) side by side. Prototypes carry switches for theme, state, the longest language and text size, marked up so the audit can drive them: data-screen and data-platform on each screen, data-set on each switch, data-system on drawn system chrome.
 - Before and after where there was a before. Outcomes in numbers where known.
 - The typography and layout of the presentation itself meet this bar.
 
@@ -153,7 +159,7 @@ Run the relevant ones and report results, not impressions.
 - Greyscale test: is the hierarchy intact without colour?
 - Squint test: are the structure and colour stance still readable?
 - Swap test: logo replaced by a competitor's. If it still looks right there is no identity.
-- Count test: distinct font sizes, weights, colours, radii and spacing values. Report the counts.
+- Count test: distinct font sizes, weights, colours, radii and spacing values, read from the render (computed styles), per surface (app and site count separately). Report the counts.
 - Canvas and accent test: name the canvas decision in one line, then estimate the share of a working screen covered by the accent. No nameable canvas, or more than roughly 5 percent accent outside a brand moment, is a finding.
 - Hero figure test: on each screen, name the one element set at 2 to 3 times body size. None, or more than one, is a finding.
 - Default count test: count the ten identity decisions sitting on the generic default. More than six is no identity; agency-grade work has at least four non-default decisions traceable to the brand idea.
@@ -161,8 +167,11 @@ Run the relevant ones and report results, not impressions.
 - Worst-case data test (use break-ui when installed): longest name, 1-letter name, 0 items, 10,000 items, a 99+ badge, slow network, offline.
 - Remove-one test: remove the least necessary element. Did anything break? Repeat until something does.
 - Consistency test: 6 screens side by side. One author?
-- Contrast test: measured, never estimated.
-- Thumb test (mobile): primary actions reachable one-handed, destructive actions away from habitual tap zones.
+- Contrast test: measured, never estimated, in both themes and in every state. Text on flat grounds is computed; text over imagery, gradients or shapes is sampled from a render (hide the text, read the pixels under its box).
+- State test: switch every state with the whole screen in view. Headers, counts, totals and badges that contradict the state are a Blocker.
+- Flow test: check the task against the flow steps in product-design-foundations. Steps neither shown nor listed as missing are a Major.
+- Thumb test (mobile): primary actions reachable one-handed, destructive actions away from habitual tap zones. Platform conventions win: a trailing navigation-bar action on iOS is not a finding, a custom placement is.
+- Tells test: list the generic tells the audit reports. Each is answered with a fix or with the reason it is this product's decision (Apart's hatching is stripes that carry data, so it stays). A tell without a reason is a Minor.
 
 ## Scoring (Full and Pre-ship modes)
 
@@ -177,7 +186,7 @@ Findings table, ordered by impact:
 
 | # | Finding | Where | Why it matters | Fix (specific values, tokens, copy) | Severity |
 
-Severity is Blocker, Major, Minor or Polish.
+Severity is Blocker, Major, Minor or Polish. Blocker: a contrast failure in any theme or state, a missing empty, loading or error state on a dense screen, a state the chrome contradicts, placeholder content, an invented claim presented as real, happy path only. Major: a hit target below the platform floor, a control without an accessible name, type that does not follow the reader's text size, motion without a reduced-motion rule, no motion table for an overlay or transition, a web screen shown at one width, flow steps missing without saying so, no brand moment in an identity direction, stand-in imagery not marked. Minor: a single off-grid value, an orphan, a stray weight, a generic tell without a reason. Polish: taste within the rules.
 
 Then the three changes that would move the work furthest, one line each. Then scores when in Full or Pre-ship mode.
 
@@ -188,7 +197,7 @@ Be direct and specific. No praise padding. A short note on what is working is us
 Before showing any UI Claude produced:
 
 1. Run sections 1 to 11 silently. Fix every Blocker and Major. Fix Minors when cheap.
-2. Run the count test and the worst-case data test on the output.
+2. Run the audit on the rendered output (scripts/audit.py, or the same measurements by script): count, contrast, state and worst-case data tests in both themes, every state and the longest language. No Blocker or Major is left, and every advisory has its answer.
 3. Show the work. Then list in 3 to 6 lines what the self-review changed and any remaining known gaps or assumptions.
 
 Never show a first draft that fails a Blocker: missing states, contrast failures, lorem ipsum, off-scale spacing, happy path only.
@@ -196,7 +205,7 @@ Never show a first draft that fails a Blocker: missing states, contrast failures
 ## Modes
 
 - Quick (about 5 minutes): the visual tells table, sections 1, 2, 3, 5 and 7, plus the 3-second, squint, count and canvas-and-accent tests. Top 5 findings.
-- Full: all sections, all relevant tests, scores.
+- Full: all sections, all relevant tests, scores. A Full or Pre-ship review of work Claude made is run by a fresh reviewer when the tool allows it (a subagent that gets the brief, the files and this skill, not the conversation that built the work); otherwise the report says it is a self-review.
 - Pre-ship: Full, plus accessibility measured, every state present, spec checked, platform QA on real devices noted. Any Blocker means not ready.
 
 ## Anti-patterns in reviewing

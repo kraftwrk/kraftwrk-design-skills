@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Audit fixture: one planted defect per rule</title>
+<style>
+* { box-sizing: border-box; margin: 0; }
+body { background: #f5f0e6; color: #222; font: 400 16px/22px Inter, sans-serif; padding: 30px; }
+section { margin-bottom: 40px; }
+h1 { font: italic 400 40px/44px "Playfair Display", serif; width: 420px; }
+h2 { font-size: 24px; line-height: 32px; font-weight: 600; }
+h4 { font-size: 16px; margin-top: 8px; margin-bottom: 24px; }
+.eyebrow { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 8px; }
+.low { color: #999; background: #fff; }
+.grey-on-colour { color: #444; background: #ffd400; }
+.over { background: linear-gradient(#fff, #eee); color: #ddd; }
+.s15 { font-size: 15px; } .s13 { font-size: 13px; } .s10 { font-size: 10px; } .s18 { font-size: 18px; } .s20 { font-size: 20px; } .s28 { font-size: 28px; line-height: 36px; } .s32 { font-size: 32px; line-height: 40px; }
+.w5 { font-weight: 500; } .w7 { font-weight: 700; }
+.other { font-family: "Other Sans", sans-serif; } .third { font-family: "Third Sans", sans-serif; }
+.spaced { letter-spacing: 0.05em; }
+.caps { text-transform: uppercase; font-size: 12px; }
+.wide { width: 1100px; }
+.shout { text-transform: uppercase; }
+.gradient { background: linear-gradient(90deg, #f0f, #0ff); -webkit-background-clip: text; background-clip: text; color: #222; }
+.stripe-side { border-left: 4px solid #e11; padding: 12px; }
+.glow { box-shadow: 0 0 24px rgba(120, 60, 255, 0.6); padding: 12px; }
+.hard { box-shadow: 6px 6px 0 #000; padding: 12px; }
+.stripes { background: repeating-linear-gradient(45deg, #ccc 0 4px, #fff 4px 8px); height: 24px; }
+.card { background: #fff; border: 1px solid #ccc; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2); border-radius: 5px; padding: 10px; width: 400px; min-height: 80px; }
+.card .card { border-radius: 12px; width: 300px; }
+.r16 { border-radius: 16px; background: #ddd; width: 120px; height: 60px; } .r28 { border-radius: 28px; background: #ddd; width: 160px; height: 80px; }
+.clip { width: 120px; overflow: hidden; white-space: nowrap; }
+.tiny { display: inline-block; height: 20px; font-size: 12px; line-height: 20px; }
+.icon { width: 44px; height: 44px; }
+.slow { transition: all 600ms ease-in; }
+.boing { transition: filter 200ms cubic-bezier(0.3, 1.6, 0.6, 1), height 200ms; }
+.lift:hover { transform: translateY(-4px); }
+.gone { opacity: 0; }
+</style>
+</head>
+<body>
+<section data-screen="defects" data-platform="web" data-state="a">
+  <p class="eyebrow">Features</p>
+  <h1>A headline that leaves a single lonely<br>word</h1>
+  <p class="low">Low contrast text on a white ground.</p>
+  <p class="grey-on-colour">Neutral grey text on a coloured ground.</p>
+  <p class="over">Pale text over a pale gradient.</p>
+  <p class="s15">Fifteen is off the scale on the web.</p><p class="s13">Thirteen too.</p><p class="s10">Ten is below the floor.</p>
+  <p class="s18 w5">Medium.</p><p class="s20 w7">Bold.</p><p class="s28 other">Another family.</p><p class="s32 third">And a third.</p>
+  <p class="spaced">Letter-spaced lower case.</p><p class="caps">Caps without tracking</p>
+  <p class="wide">This paragraph runs far too wide for comfortable reading, well past seventy-five characters on every line, and it keeps going for long enough to wrap at least three times so that the measure can be counted from the render and not guessed from the stylesheet, which is the whole point of measuring. It still goes on, because three full lines at this width need a great deal of text, and then a little more to be sure.</p>
+  <p class="shout">This whole sentence is set in capitals and is long enough to count as a passage and not as a label.</p>
+  <p>Don't use "straight quotes"... or lorem ipsum, and never promise to work seamlessly.</p>
+  <p><span class="gradient">Gradient text</span></p>
+  <div class="stripe-side">A callout with a side stripe.</div>
+  <div class="glow">A glowing box.</div>
+  <div class="hard">A hard offset shadow.</div>
+  <div class="stripes"></div>
+  <h2>A section heading</h2>
+  <h4>A skipped level with more space below than above</h4>
+  <p>Text under the heading.</p>
+  <div class="card">Outer card with border, shadow and tint.<div class="card">Inner card.</div></div>
+  <div class="r16">sixteen</div><div class="r28">twenty-eight</div>
+  <p class="clip">This text is cut off without a truncation rule</p>
+  <a href="#" class="tiny">Tiny link</a>
+  <button class="icon slow"><svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8"/></svg></button>
+  <button class="icon boing lift" aria-label="Lift"></button>
+  <input placeholder="Search">
+  <img src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=" width="48" height="48">
+  <p class="gone">Text that is invisible at rest.</p>
+  <button data-set="data-state=a" data-on="[data-screen=defects]" aria-label="State a" class="icon"></button>
+  <button data-set="data-state=b" data-on="[data-screen=defects]" aria-label="State b" class="icon"></button>
+</section>
+<section data-screen="flat" data-platform="web">
+  <p class="s20">Twenty.</p><p class="s18">Eighteen.</p><p>Sixteen is the body size and carries most of the text here.</p>
+</section>
+</body>
+</html>

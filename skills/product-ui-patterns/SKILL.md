@@ -20,6 +20,7 @@ How to use: name the job of the screen, pick the pattern that does that job, app
 5. Brand loud in launch, onboarding and success patterns; quiet in list, table, cart and settings patterns.
 6. Real content in every pattern: long names, zero and many, the worst case.
 7. Every pattern ships with its states: empty, loading, error, selected, disabled.
+8. An eyebrow carries a fact the heading does not: a category from the product's own taxonomy, a date, a status, a step, a named edition or season, or the label of a figure. If the heading reads the same without it, delete it. Never an eyebrow that names the kind of section (Features, Why us, Testimonials) or works as a second tagline.
 
 ## Screen patterns
 
@@ -29,7 +30,7 @@ How to use: name the job of the screen, pick the pattern that does that job, app
 - Anatomy: eyebrow label (secondary, 13 to 15), the figure (32 to 36 on mobile; Material headline large or display small, iOS Large Title), unit or currency small beside it, one or two supporting stats, one primary action, everything else quiet.
 - Values: figure at 2 to 3 times body; tabular figures; figure and label share a left edge; 24 to 32 of space around the figure.
 - Variants: light weight for calm (finance, wellbeing); bold for performance (sport, gaming); gradient text only as a success moment.
-- Avoid: two competing figures; a chart above the figure; the accent on the figure in working screens.
+- Avoid: two competing figures; a chart above the figure; the accent on the figure in working screens; a figure that is a claim or a vanity number instead of the user's own fact.
 - Seen in: Uber (ETA), STC Bank (balance), Brand New Day (amount), Gatorade (program progress), Aesop (cart subtotal).
 
 ### 2. Brand canvas screen (launch, login, onboarding)
@@ -46,7 +47,7 @@ How to use: name the job of the screen, pick the pattern that does that job, app
 - Intent: the user is working; the brand steps back into type, spacing and tone.
 - Anatomy: canvas, text in two or three greys, hairline rows, numbers right-aligned and tabular, one text link or one primary action, no accent fills.
 - Values: rows 56 (one line) or 72 (two lines) on Material, 44 minimum on iOS; hairline per platform separator token; totals as a hero figure at the bottom.
-- Variants: dark panel for a cart drawer on a cream product; grouped inset lists on iOS.
+- Variants: dark panel for a cart drawer on a cream product; grouped inset lists on iOS. On a list under a tab bar the create action is a trailing top-bar button on iOS and a FAB or bottom button on Android.
 - Avoid: illustration, brand pattern, coloured headers, cards per row.
 - Seen in: Aesop (cart), Brand New Day (portfolio), Epic (library and browse), LV (catalog).
 
@@ -54,7 +55,7 @@ How to use: name the job of the screen, pick the pattern that does that job, app
 
 - Intent: sell one object with the calm of a magazine.
 - Anatomy: two-column split; product image left (or a gallery), right column with name at title size, a short description, label and value rows separated by hairlines (size, finish, ingredients), one full-width primary action; below, alternating image and text blocks.
-- Values: 12-column grid, 24 margins, reading column 560 to 720; label and value rows 48 high; primary action 48 to 56.
+- Values: 12-column grid, 24 margins, text column 448 to 512 (60 to 75 characters at 16); label and value rows 48 high; primary action 48 to 56.
 - Variants: mobile stacks the columns with the image full-bleed and the action pinned; luxury removes the accent entirely.
 - Avoid: tabs that hide the facts; badges and urgency labels; a second filled button.
 - Seen in: Aesop, Harrods, LV.
@@ -87,7 +88,7 @@ How to use: name the job of the screen, pick the pattern that does that job, app
 ### 8. Dashboard home (summary plus entry points)
 
 - Intent: orient, then route.
-- Anatomy: minimal header (greeting or name, two icon buttons), segmented pill tabs or chips to switch context, a hero figure card, a short list of recent items with a "See all" text link, a row of entry points with icons and labels, tab bar.
+- Anatomy: minimal header (greeting or name, two icon buttons), segmented pill tabs or chips to switch context, a hero figure card, a short list of recent items with a "See all" text link, a row of entry points with icons and labels (one filled as the primary action, the rest tinted), tab bar.
 - Values: card radius from the product's logic (16 to 28 soft, 8 to 12 friendly); entry points 56 to 64 wide; page dots when cards page horizontally.
 - Avoid: more than one hero card; charts without a question they answer; coloured headers.
 - Seen in: STC Bank (home), Brand New Day (investing), Uber (ride status sheet).
@@ -98,7 +99,7 @@ How to use: name the job of the screen, pick the pattern that does that job, app
 
 - Anatomy: optional leading avatar or icon (40), title at body size, subtitle at 14 or 15 in secondary, trailing value, chevron or a small grey pill; hairline separator inset to the text edge.
 - Values: 56 one line, 72 two lines (Material); 44 minimum (iOS); 16 horizontal padding; title and subtitle 2 to 4 apart.
-- Variants: transaction row (avatar, name, type; amount right in tabular figures with relative time beneath); selection row (checkmark or radio trailing); navigation row (chevron).
+- Variants: transaction row (avatar, name, type; amount right in tabular figures with relative time beneath); selection row (checkmark or radio trailing); navigation row (chevron); settings row (a label that wraps, value or switch trailing).
 - Avoid: cards per row; two chevrons; coloured row backgrounds.
 - Seen in: Uber, STC Bank, Aesop (cart), Brand New Day (portfolio).
 
@@ -234,7 +235,7 @@ How to use: name the job of the screen, pick the pattern that does that job, app
 
 - Intent: explain one feature with the product itself as proof.
 - Anatomy: two columns on expanded (text 5 columns, device 7, or the reverse), eyebrow label, headline at headline size, two to three lines of body, optional text link; the device sits inside a rounded panel in the brand colour or on the dark section canvas; sections alternate sides.
-- Values: section padding 64 to 96 vertical; panel radius from the product's logic (16 to 28); device screenshot at real scale with real content; one feature per section.
+- Values: section padding 64 to 96 vertical; panel radius from the product's radius logic (0 to 28); device screenshot at real scale with real content, its canvas never the same colour as the panel; one feature per section.
 - Variants: a row of category chips above the section; a floating stat card or two over the photo (collage) when the feature is about numbers.
 - Avoid: three features per section in equal columns with icons; angled 3D devices in every section; placeholder screens.
 - Seen in: STC Bank (web), Headspace (web), Gatorade.com.

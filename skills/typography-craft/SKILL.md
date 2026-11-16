@@ -27,14 +27,16 @@ Values come from product-design-foundations (the major second scale mapped to Ma
 - Pairing: contrast of construction with shared proportions. A display face (serif, slab, condensed, rounded) carries headlines and hero figures; a neutral workhorse carries UI text; their x-heights and widths should sit close enough that 16px body and 16px label look like one system. Never pair two grotesks of similar flavour; never pair more than two families plus an optional mono.
 - One family can do everything through size, weight and tracking (Uber, Gatorade, Instacart). Reach for a second face only when the brand idea asks for it (luxury, editorial, heritage, playful).
 - Platform defaults are legitimate: SF Pro on iOS and Roboto on Android are tuned for their platforms; a brand face must match or beat them at 14 before it replaces them for UI text.
+- Name the face and the reason it is this product's. The spent faces, the ones generated interfaces reach for first (November 2026: Inter, Roboto off Android, Geist, DM Sans, Space Grotesk, Plus Jakarta Sans, Outfit, IBM Plex, Instrument Sans; for display Fraunces, Playfair Display, Newsreader, Cormorant, Lora, Instrument Serif, DM Serif) are fine as the workhorse of a product without an identity brief; in identity work each needs a reason from the brief, and so does an oversized italic serif as the hero headline, the most common generated look. A prototype may set an open-licence stand-in, and the notes name the licensed face it stands in for.
 
 ## Scale and rhythm
 
-- Scale: major second (1.125) from the platform body size, snapped to the platform roles (Material 3 display, headline, title, body, label; iOS Large Title through Caption 2). A product uses 5 to 7 steps. See product-design-foundations for the values.
+- Scale: major second (1.125) from the platform body size, snapped to the platform roles (Material 3 display, headline, title, body, label; iOS Large Title through Caption 2). A product uses 5 to 7 steps per surface: the app and the marketing site each count on their own platform's scale, and a shared element (a wordmark) takes a size from the surface it sits on. See product-design-foundations for the values.
+- Steps between roles: neighbouring sizes on a major second scale are too close to carry different jobs. A heading is at least 1.25 times the role below it (16 to 20, 22 to 28: two steps on the scale) or the same size and 200 heavier (iOS Headline 17 semibold over Body 17). Secondary text is the exception: one step down, in the secondary colour.
 - Line heights land on the 4px grid: 16/24, 14/20, 20/28, 24/32, 28/36, 32/40, 36/44, 45/52, 57/64. Vertical spacing between text blocks is then a multiple of 4 and the rhythm holds without a baseline grid. The iOS text styles are the exception: they keep Apple's leading (17/22, 15/20, 13/18, 34/41) and the spacing between blocks carries the grid.
 - Leading tightens as size grows: around 1.5 at body, 1.3 at titles, 1.15 at display. Below 1.1 only for a single-line hero figure.
-- Tracking for a brand typeface: 0 at body; -0.01em at 24 to 32; -0.02em at 36 and above; +0.04 to +0.08em for all caps at 11 to 14; never letter-space lower case. System faces keep their platform tracking instead: SF Pro adjusts it at every size (in mockups apply Apple's table, for example 17 at -0.43 and 34 at +0.40), and Roboto uses Material's per-style letter spacing (body large +0.5, label large +0.1, headlines 0).
-- Measure: 45 to 75 characters for reading text, aiming for about 60 (max-width around 60 to 65ch at body size; Material's own range is 40 to 60); 35 to 50 for captions in narrow columns; headlines break by sense, not by width, at 2 to 3 lines maximum.
+- Tracking for a brand typeface, mixed case: 0 at body; -0.01em from 24 to 35; -0.02em from 36. All caps: +0.04 to +0.08em at 11 to 14, 0 to +0.02em at display sizes, never negative. Mono figures: 0 in columns, -0.02 to -0.04em from 28 up. Never letter-space lower case. System faces keep their platform tracking instead: SF Pro adjusts it at every size (in mockups apply Apple's table, for example 17 at -0.43 and 34 at +0.40), and Roboto uses Material's per-style letter spacing (body large +0.5, label large +0.1, headlines 0).
+- Measure: 45 to 75 characters for reading text, aiming for about 60 (Material's own range is 40 to 60); 35 to 50 for captions in narrow columns; headlines break by sense, not by width, at 2 to 3 lines maximum. Count the characters in the render: the ch unit is the width of a zero, wider than the average letter, so 45ch holds 56 to 67 characters and 65ch holds 80 to 96. Set max-width between 36 and 50ch, or 20 to 32rem at 16 body (28rem lands near 60 characters), then count.
 - Responsive type on the web: fluid between the compact and expanded values with a clamp (for example a headline from 32 to 48), never scaling below the platform body size; UI text does not scale with the viewport.
 - Dynamic Type on iOS and font scaling on Android are designed for, not tolerated: layouts hold at the largest accessibility sizes, with truncation rules written per element.
 
@@ -51,9 +53,9 @@ Values come from product-design-foundations (the major second scale mapped to Ma
 ## Body and UI text
 
 - Body at 16/24 on web and Android (1.5 leading) or the iOS Body style (17/22, with loose leading for long passages), regular weight, measure 45 to 75; paragraphs separated by one line of space or 8 to 12, not both.
-- Secondary text differs by colour first (secondary foreground), size second (one step down), weight never. Tertiary text is for timestamps and meta only.
+- Secondary text differs by colour first (secondary foreground), size second (one step down), weight never. Nothing that has to be read goes lighter than the secondary colour (the contrast rules are in product-design-foundations).
 - Labels, buttons and tabs at 14 to 17 medium; label text never below 11, caps labels never below 11 with +0.04em or more.
-- Truncation rules per element: 1-line clamp with an ellipsis for titles in lists, 2-line clamp for cards, middle truncation for file names and addresses, no truncation for amounts and dates.
+- Truncation rules per element: 1-line clamp with an ellipsis for titles in lists, 2-line clamp for cards, middle truncation for file names and addresses, no truncation for amounts and dates. Labels of settings, fields and options wrap to a second line; only names and titles truncate.
 - Alignment: left for text, right for numbers in columns, centred only for isolated short moments. Label and value pairs share a baseline and one alignment edge.
 - Links in running text are underlined or clearly coloured, never only bold. In UI, text buttons are verbs in the accent or foreground colour.
 - No justified text in UI. Hyphenation off for UI text, on with limits (two consecutive lines maximum) for long reading on the web.
@@ -63,7 +65,7 @@ Values come from product-design-foundations (the major second scale mapped to Ma
 - Tabular lining figures wherever numbers align or change: prices, balances, counters, timers, tables, sports scores, charts. Proportional figures in running text; old-style figures only in editorial reading text if the face has them.
 - Decimal alignment in columns; thousands and decimal separators per locale (1.234,56 in Dutch, 1,234.56 in English); negative numbers with a real minus sign, never a hyphen; percentages and units with a non-breaking space where the locale requires it.
 - Currency: code or symbol per locale and product convention, set at label size beside a hero figure, at the same size inside tables.
-- Monospaced or tabular setting for codes, IDs, IBANs and one-time passcodes, grouped in fours.
+- Monospaced or tabular setting for codes, IDs, IBANs and one-time passcodes, grouped in fours. A mono face is set only in columns, tables and stand-alone figures; an amount inside a sentence stays in the UI face with tabular figures.
 - Time and dates: locale-formatted, relative for the recent past and absolute after about a week, never "340 days ago".
 - Charts inherit the type system: axis labels at label size in secondary colour, values tabular, titles at title size.
 
@@ -78,7 +80,7 @@ Values come from product-design-foundations (the major second scale mapped to Ma
 
 ## Rendering, loading and dark mode
 
-- Web: preload the primary font files, subset to the languages served, font-display swap with a size-adjusted fallback so layout does not shift, variable fonts over many static files, woff2 only.
+- Web: preload the primary font files, subset to the languages served, font-display swap with a size-adjusted fallback so layout does not shift, variable fonts over many static files, woff2 only. Reset b, strong and th to the product's emphasis weight; the browser's bolder makes a stray third weight. Centre button, tab and badge labels optically by trimming the label to cap height and baseline (text-box: trim-both cap alphabetic on the label element; Chrome and Edge 133, Safari 18.2, Firefox 154, older browsers keep the full box), then check mixed-case labels by eye.
 - Check rendering at 14 and 16 on Windows (ClearType) and mid-range Android as well as macOS; a face that only looks good on a Retina Mac is not a UI face.
 - Dark mode: light text on dark reads heavier; keep the weight and open the tracking slightly, or step the weight down at display sizes; secondary text at 60 percent white, not a lighter weight.
 - Minimum sizes: 11 for captions and caps labels, 12 for labels, 14 for anything the user must read, 16 or 17 for body.
@@ -99,14 +101,14 @@ Values come from product-design-foundations (the major second scale mapped to Ma
 
 Run on any screen or system, report findings with values:
 
-1. Scale: every size on the major second scale and mapped to a platform role? No more than 7 steps in use?
+1. Scale: every size on the major second scale and mapped to a platform role? No more than 7 steps in use per surface, counted from the render?
 2. Rhythm: every line height a multiple of 4, or the iOS text style's own leading? Spacing between text blocks on the 4px grid?
-3. Hierarchy: readable in greyscale from size and spacing alone? One hero figure per screen?
-4. Families: at most one workhorse, one display face, one mono? Pairing contrasts in construction and matches in proportion?
+3. Hierarchy: readable in greyscale from size and spacing alone? Every heading at least 1.25 times the role below it, or 200 heavier? One hero figure per screen?
+4. Families: at most one workhorse, one display face, one mono? Pairing contrasts in construction and matches in proportion? A reason for each face, none from the spent list by reflex?
 5. Headlines: tracking tightened at display sizes on brand faces (platform tracking on system faces), balanced breaks, no orphans, 2 to 3 lines maximum, sentence case unless the voice is caps?
-6. Body: measure 45 to 75, leading 1.5 or the iOS Body style, secondary text by colour not weight, no justified text?
+6. Body: measure 45 to 75, counted in the render for every paragraph of three lines or more, leading 1.5 or the iOS Body style, secondary text by colour not weight, no justified text?
 7. Numbers: tabular where they align or change, decimals aligned, locale separators, real minus signs, units at label size?
-8. Micro-typography: real quotes, apostrophes, ellipsis, non-breaking spaces, ligatures on for text and off for code?
+8. Micro-typography: real quotes, apostrophes, ellipsis, non-breaking spaces, ligatures on for text and off for code? Search every string for straight quotes, three dots and double hyphens before showing.
 9. Truncation and localisation: a rule per element, the longest language checked, Dynamic Type and font scaling survived?
 10. Rendering: loading strategy with matched fallback, checked at 14 on Windows and Android, dark mode weight considered?
 11. Accessibility: contrast ratios measured, minimum sizes respected, 200 percent scaling survived?
@@ -120,5 +122,5 @@ Run on any screen or system, report findings with values:
 - Proportional figures in a table; prices that jump as they update; a hyphen as a minus sign; straight quotes.
 - Secondary text made light weight instead of secondary colour; grey text at 40 percent that fails contrast.
 - Letter-spaced lower case; faux bold; faux italic; faux small caps.
-- Text that scales with the viewport at body size; layouts that break at the first accessibility size.
+- Text that scales with the viewport at body size; layouts that break at the first accessibility size; a column set to 65ch and assumed to hold 65 characters.
 - A brand face loaded as six static files with layout shift on every page.

@@ -38,7 +38,7 @@ Observed in the product screenshots and videos of their published case studies (
 
 Make these in order, each in one line, before drawing anything. Together they are the identity; everything else is execution.
 
-1. Canvas: warm cream (lifestyle, editorial, wellbeing), near-black (sport, gaming, entertainment, luxury-tech), white (utility, luxury commerce, assistants), or the brand gradient on hero screens only (finance brands with a strong hue). Never a mid-grey canvas.
+1. Canvas: light or dark comes from the scene of use first (who, where, in what light: a courier outdoors at noon, a trader in a dim room, a child on the sofa after dinner), then the tone from the product: warm cream (lifestyle, editorial, wellbeing), near-black (sport, gaming, entertainment, luxury-tech), white (utility, luxury commerce, assistants), or the brand gradient on hero screens only (finance brands with a strong hue). Never a mid-grey canvas, and never warm off-white because it looks tasteful.
 2. Accent economy: one accent for action, selection, live status and progress, covering a small fraction of the screen (roughly 5 percent or less outside brand moments). Zero accent is a valid luxury or editorial choice. A categorical set only when the content has categories.
 3. Type voice: a display voice (bold geometric, condensed caps, serif with italic, rounded, light) for headlines and hero figures, plus a neutral workhorse for UI text. Decide size contrast (dramatic or even), case, tracking and weight; these matter more than the font name.
 4. Hero figure: the one number or headline per screen set 2 to 3 times the body size with its unit or label small beside it, and a quiet screen around it.
@@ -58,13 +58,16 @@ Make these in order, each in one line, before drawing anything. Together they ar
 - Personality: 3 attributes plus 1 tension. Each attribute gets a "this, not that" line (warm, not cute; precise, not cold). The tension is what makes it specific (playful but never silly).
 - Category conventions: list 5. Mark the one you will break and why. Keep the other 4.
 - References: 5 to 8, each with one sentence on what to take from it. Never "make it like X".
+- Audience world: five to seven things this audience knows by heart (a document, a tool, a place, a ritual, a publication, a notation, a signage or identity system), each with one line on why it fits what the product does and one on how it looks (ground and main colours, type voices, the one mark that makes it recognisable). Then name the rut: the page this category always ships and its obvious opposite. Neither is a direction.
 - Constraints: existing brand assets, platforms, accessibility, markets and languages, tech stack, imagery budget.
 
 ### 2. Directions (2 or 3, deliberately different)
 
-Each direction contains: type choice, colour stance, shape language, one hero screen, one dense working screen, the app icon or logo lockup, and 3 lines of copy in its voice. Name each direction after its idea, not after its look. Judge directions on the dense screen as much as on the hero; a direction that only works on the hero is a poster, not a product identity.
+Each direction contains: type choice, colour stance, shape language, one hero screen, one dense working screen, one loud brand moment (launch, onboarding or success), the app icon or logo lockup, and 3 lines of copy in its voice. Name each direction after its idea, not after its look. Judge directions on the dense screen as much as on the hero; a direction that only works on the hero is a poster, not a product identity.
 
-Method, so the directions are actually different: write the ten decisions as a matrix (ten rows, one column per direction). Directions must differ in at least three decisions, must each push a different carrier to its extreme (one pushes type, one pushes canvas or colour, one pushes imagery or motion), and must each pick a different convention to break. Pull options from the catalogues below. If two columns read the same at a glance, one of them is not a direction.
+Method, so the directions are actually different: write the decisions as a matrix (one column per direction; twelve rows: the ten decisions, the carrier pushed to its extreme, the convention broken). Directions must differ in at least three decisions, must each push a different carrier to its extreme (one pushes type, one pushes canvas or colour, one pushes imagery or motion), and must each pick a different convention to break. Pull options from the catalogues below, and take at least one direction's device, canvas or type voice from the audience world, not from the catalogues. A brief that brings its own picture (a product name, a metaphor) gets at most one direction built on the literal reading. Each direction names its honest risk in one line. If two columns read the same at a glance, one of them is not a direction.
+
+Beside the directions, always offer the category standard played straight: name two or three products it should sit beside, match their craft level, add no quirk. It is the safe choice made on purpose and executed fully, never a diluted direction.
 
 ### 3. System
 
@@ -78,7 +81,7 @@ Apply across the key flows, including the ugly ones (settings, errors, long list
 
 ### Typography (the primary carrier)
 
-- Choose for character and performance: full character set for the markets served, tabular figures, good rendering at 14px, variable weights, a licence that covers app and web.
+- Choose for character and performance: full character set for the markets served, tabular figures, good rendering at 14px, variable weights, a licence that covers app and web. Name the face with its reason; the spent faces are listed in typography-craft.
 - Pairing strategies: (a) one versatile grotesk doing everything through size and weight; (b) an expressive display face (serif, slab, geometric, humanist) for headlines plus a neutral workhorse for UI; (c) a mono accent for data-heavy or technical products. Never more than 2 families plus an optional mono.
 - The display face appears only at display sizes and in brand moments. UI text always uses the workhorse.
 - Define the typographic voice beyond the font name: size contrast (dramatic or even), case convention, tracking, leading feel, alignment habit. Two products can share a typeface and feel completely different through these.
@@ -90,7 +93,7 @@ Apply across the key flows, including the ugly ones (settings, errors, long list
 - Derive the whole system from the brand hues: tinted neutrals, the accent scale, and semantic colours harmonised with the brand (a brand red and an error red must not clash, so one of them moves).
 - Write the signature colour rule: exactly where the accent appears (primary action, selection, focus, one brand surface) and where it never appears.
 - Fix contrast at system level: create UI-safe variants of brand colours (text-safe, surface-safe) and document that the marketing hex and the UI token differ on purpose.
-- Light and dark are both designed from the brand, never inverted.
+- Light and dark are both designed from the brand, never inverted. A brand-colour canvas turns near-black in dark mode and the brand colour moves to actions, shapes and the hero figure; text on a fixed brand or image ground keeps its own on-image colours in both themes.
 
 ### Shape and surface
 
@@ -108,12 +111,13 @@ Apply across the key flows, including the ugly ones (settings, errors, long list
 - Decide the one approach: photography (with art direction rules for light, crop, colour treatment, people versus objects), illustration (style, line, palette subset, level of abstraction), 3D (materials, lighting, camera) or none (type-led).
 - Write the art direction as rules someone else can follow and brief an artist or a generative tool with.
 - Imagery never competes with content. In product UI it lives in brand moments; in commerce the product imagery is the hero and the brand recedes around it.
+- When no imagery exists yet, draw or generate stand-ins in the chosen art direction and write the brief beside them (subject, light, ground, crop). Never grey boxes, never stock, always marked as stand-ins.
 - When imagery is the colour (fashion, food, games, media), the chrome goes monochrome: white or black text, hairlines, no accent fills. Text over images sits on a gradient scrim that fades the image into the canvas, never on an unscrimmed photo.
 
 ### Motion signature
 
 - Define three things: the easing family (crisp, fluid or springy), the base durations, and one signature move that recurs (a reveal, a morph, a stagger, a transition). Observed signatures: a persona whose colour encodes its state, an add-to-cart tap that is also the brand line, a focus state that fills with the accent, product cut-outs drifting as a pattern, a colour burst on launch.
-- Motion still obeys the product baseline: UI motion under 300ms, interruptible, purposeful. Brand sets the character; it never buys slowness.
+- Motion still obeys the product baseline: UI motion under 300ms, interruptible, purposeful. Brand sets the character; it never buys slowness. A signature that needs blur, a mask or a colour change is built from static layers (a pre-blurred copy, a clip) so only transform and opacity animate; it plays at brand moments and after an event, once, never on frequently seen data.
 - Launch moment: a short launch animation (under 1 second) that resolves into the first screen. The same idea reappears, smaller, in loading and success states.
 - When Emil Kowalski's skills are installed, use them to build and review the motion.
 
@@ -220,6 +224,7 @@ For every product, mark where brand is loud, medium or quiet:
 - Loud: app icon, launch and login (full brand canvas), onboarding, first empty state (illustration), major success (accent or gradient on the hero figure), marketing site, notification tone.
 - Medium: navigation, home, dashboards, cards, section headers.
 - Quiet: forms, tables, settings, payment and checkout, cart, library and list views, errors, dense data, permissions. These go monochrome: type, spacing, hairlines and tone only.
+- Reading surfaces (articles, help, documentation, changelog): the identity owns the frame (masthead, navigation, ground, title and section openers, the setting of code, tables and callouts) and the column stays calm: the reading face, the measure, nothing behind the text, navigation nobody has to learn.
 
 Rule: a user working in a quiet zone should be able to forget the brand and still feel it in the type, spacing and tone.
 
@@ -244,7 +249,7 @@ Rule: a user working in a quiet zone should be able to forget the brand and stil
 
 - Brand as decoration: logo everywhere, brand colour on every element, brand pattern behind content.
 - Identity that is only a logo: swap the logo and nothing changes.
-- Trend as identity: default purple gradients, glassmorphism, 3D blobs, grainy gradients, "AI aesthetic" glows. A trend is allowed only as the deliberate convention-break, and only if it will age acceptably.
+- Trend as identity: default purple gradients, glassmorphism, 3D blobs, grainy gradients, "AI aesthetic" glows, and the generated looks of the moment (warm cream with a serif display and a terracotta accent; near-black with one neon accent; hairlines with an italic serif and small tracked labels; flat ink with hard offset shadows). A trend is allowed only as the deliberate convention-break, and only if it will age acceptably; a generated look only when the brief asks for exactly that.
 - Generic SaaS as identity: Inter, blue 600, 8px radius, cards with 1px borders, hero plus three feature tiles. Acceptable as a baseline, never as an identity.
 - A mid-grey canvas, or a canvas chosen by default rather than as the first brand decision.
 - Accent spread over the screen (filled tab bars, coloured headers, coloured cards and buttons all at once).
@@ -258,8 +263,10 @@ Rule: a user working in a quiet zone should be able to forget the brand and stil
 ## Review: does the product feel like itself?
 
 - Ten decisions test: can each of the ten decisions be read off the screens in one line? A decision that cannot be named was never made.
-- Default count test: count the ten decisions sitting on the generic default (white canvas, blue accent, neutral grotesk at an even scale, no hero figure, cards, radius 8, no imagery role, standard chrome, no brand moments, no motion signature). More than six defaults means there is no identity. Agency-grade products have at least four non-default decisions, each traceable to the brand idea.
+- Default count test: count the ten decisions sitting on the generic default (white canvas, blue accent, neutral grotesk at an even scale, no hero figure, cards, radius 8, no imagery role, standard chrome, no brand moments, no signature). A default the brief gives a reason for (white for luxury commerce) counts as a decision. More than six defaults means there is no identity. Agency-grade products have at least four non-default decisions, each traceable to the brand idea.
 - Intensity test: name the one or two carriers pushed to an extreme. None means the identity is timid; more than two means it is noise.
+- Rut test: is this the page the category always ships, its obvious opposite, or one of the generated looks? Then every part of it needs its reason from the brief.
+- Memory test: what would someone describe an hour after seeing one screen? A mood means the identity has not committed; a thing (the hatching, the plates, the flip) means it has.
 - Device test: is there one recurring brand device, defined once and used in named places? A product with no device, or with a device used as wallpaper, is a finding.
 - Accent coverage test: estimate the share of a working screen covered by the accent. Above roughly 5 percent outside a brand moment is a finding.
 - Swap test: replace the logo with a competitor's. If the screens still look right, there is no identity.

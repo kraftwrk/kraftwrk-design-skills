@@ -27,6 +27,8 @@ This skill does one thing: it writes decisions down in the right place, in a for
 - Marc corrects or overrides a design choice, chooses one variant over another, reverts something, or edits a file Claude wrote.
 - A client or project constraint contradicts a rule in the skills.
 - Material Design or the Human Interface Guidelines changed, or a platform value in the skills looks out of date: re-check it against the live guideline page and propose the update.
+- After an improvement pass (prompts/improve-the-skills.md): each finding the skills allowed becomes a candidate rule with the finding as its reason, proposed like any other decision.
+- A rule is borrowed from another skill set (Impeccable, Intent, Emil Kowalski): write it in this skill's rule form with its source, propose it, and credit the source in NOTICE.md once Marc adopts it. Until then it is not a rule.
 - The end of a design session: run a capture pass before closing.
 
 ## Signals to collect
@@ -56,7 +58,7 @@ List every decision from the session with Marc's exact words (or the diff), what
 Walk each decision through this tree:
 
 - Would this hold on a different client's project?
-  - No: project decision. Goes in the project's DESIGN-DECISIONS.md.
+  - No: project decision. Goes in the project's decision record.
   - Yes: general rule. Which skill?
     - Taste, preference, how Marc likes things: kraftwrk-design-style.
     - A number, a platform metric, a technical baseline: product-design-foundations.
@@ -92,7 +94,8 @@ Confidence is "stated" (Marc gave the reason) or "inferred" (Claude proposed the
 
 Project decisions:
 
-- Append to DESIGN-DECISIONS.md at the root of the project's repo or connected folder. Create the file if it does not exist. Format: date, decision, reason, status (active, superseded), and the rule it departs from if any.
+- A project keeps one decision record. With Intent installed that is Intent's decisions.md, in its entry format (date and decision, decided by, why, rejected, rests on) with a "Departs from" line when a rule or a Material or HIG value is left. Without Intent it is DESIGN-DECISIONS.md at the root of the project's repo or connected folder: date, decision, reason, status (active, superseded), and the rule it departs from if any. Create the file if it does not exist. Never keep both.
+- A decision that changes the system (a token, the radius logic, the type voice) also updates DESIGN.md when the project has one, so that file always describes the system as it stands. The reason stays in the decision record.
 - When no project folder exists (chat only), write the decision into the project's memory area so the next session in that project sees it, and say so.
 
 General rules:

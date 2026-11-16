@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Audit fixture: a clean screen</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+:root { color-scheme: light dark; --bg: #ffffff; --fg: #15171a; --fg2: #555b63; --line: #d9dce0; --surface: #f2f4f6; accent-color: #15171a; }
+@media (prefers-color-scheme: dark) { :root { --bg: #0e0f11; --fg: #eceef0; --fg2: #a3a9b1; --line: #2b2f34; --surface: #1a1c1f; accent-color: #eceef0; } }
+* { box-sizing: border-box; margin: 0; }
+::selection { background: var(--fg); color: var(--bg); }
+:focus-visible { outline: 2px solid var(--fg); outline-offset: 2px; }
+body { background: var(--bg); color: var(--fg); font: 400 1rem/1.5rem "Kraftwrk Test Sans", sans-serif; padding: 2rem; }
+main { max-width: 45rem; }
+h1 { font-size: 2.25rem; line-height: 2.75rem; font-weight: 600; letter-spacing: -0.02em; text-wrap: balance; }
+h2 { font-size: 1.5rem; line-height: 2rem; font-weight: 600; letter-spacing: -0.01em; margin-top: 3rem; text-wrap: balance; }
+p { max-width: 30rem; margin-top: 0.75rem; text-wrap: pretty; }
+p a { color: inherit; text-underline-offset: 0.2em; }
+.meta { color: var(--fg2); font-size: 0.875rem; line-height: 1.25rem; }
+ul { list-style: none; padding: 0; margin-top: 1rem; border-top: 1px solid var(--line); }
+li { display: flex; justify-content: space-between; align-items: center; min-height: 3.5rem; border-bottom: 1px solid var(--line); }
+.note { display: none; margin-top: 1rem; padding: 1rem; border-radius: 8px; background: var(--surface); }
+[data-state="empty"] ul, [data-state="loading"] ul, [data-state="error"] ul { display: none; }
+[data-state="empty"] .n-empty, [data-state="loading"] .n-loading, [data-state="error"] .n-error { display: block; }
+input, button { font: inherit; color: inherit; }
+label { display: block; margin-top: 2rem; }
+input { display: block; width: 100%; height: 3.5rem; margin-top: 0.5rem; padding: 0 1rem; border: 1px solid var(--fg2); border-radius: 8px; background: var(--bg); caret-color: #2f6fed; }
+button { height: 3rem; margin-top: 1rem; padding: 0 1.5rem; border: 0; border-radius: 8px; background: var(--fg); color: var(--bg); font-weight: 600; transition: transform 140ms cubic-bezier(0.2, 0.8, 0.2, 1); }
+button:active { transform: scale(0.97); }
+@media (hover: hover) { button:hover { opacity: 0.9; } }
+@media (prefers-reduced-motion: reduce) { button { transition: none; } }
+.switches { margin-top: 3rem; display: flex; gap: 0.5rem; }
+.switches button { margin-top: 0; }
+</style>
+</head>
+<body>
+<main data-screen="invoices" data-platform="web" data-state="filled">
+  <h1>Invoices that still need an answer</h1>
+  <p>Three clients have an open invoice this month. The oldest one was sent nineteen days ago and has had one reminder, so it is the one to call about first. <a href="#terms">Payment terms</a> are fourteen days unless the contract says otherwise.</p>
+  <h2>Open this month</h2>
+  <ul>
+    <li><span>Studio Vandersteen &amp; Partners</span><span class="meta">19 days</span></li>
+    <li><span>Coworking De Kleine Fabriek</span><span class="meta">6 days</span></li>
+    <li><span>Bakkerij Het Krakelingetje</span><span class="meta">2 days</span></li>
+  </ul>
+  <p class="note n-empty">No open invoices. Everything sent this month has been paid.</p>
+  <p class="note n-loading">Fetching your invoices</p>
+  <p class="note n-error">The invoices did not load. Check the connection and try again.</p>
+  <label>Client or invoice number<input type="search" name="q" autocomplete="off"></label>
+  <button type="button">Send reminder</button>
+  <div class="switches" data-system>
+    <button type="button" data-set="data-state=filled" data-on="[data-screen]">Filled</button>
+    <button type="button" data-set="data-state=empty" data-on="[data-screen]">Empty</button>
+    <button type="button" data-set="data-state=loading" data-on="[data-screen]">Loading</button>
+    <button type="button" data-set="data-state=error" data-on="[data-screen]">Error</button>
+  </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "name": "kraftwrk",
+  "metadata": {
+    "description": "Kraftwrk Studio's design skills."
+  },
+  "owner": {
+    "name": "Marc Luijkx"
+  },
+  "plugins": [
+    {
+      "name": "kraftwrk-design-skills",
+      "description": "Product design at agency level with Marc Luijkx's signature: a baseline on Material Design 3 and Apple HIG, typography, a pattern library, product brand identity, a measured review gate and a learning loop.",
+      "version": "0.4.0",
+      "author": {
+        "name": "Marc Luijkx"
+      },
+      "source": "./",
+      "category": "design",
+      "tags": [
+        "design",
+        "product-design",
+        "typography",
+        "brand-identity",
+        "design-review"
+      ]
+    }
+  ]
+}

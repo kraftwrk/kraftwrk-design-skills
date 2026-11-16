@@ -19,6 +19,8 @@ A skill is a folder with a `SKILL.md` file: rules an agent loads when the task m
 
 Motion is handled by Emil Kowalski's skills (installed separately, see below). Web code review by Vercel's web-design-guidelines.
 
+Before and after the stack: Intent (installed separately) owns the project context, the problem, flows and navigation, wireframes, words, the state inventory, the usability review and the handoff package. These skills own how the product looks, moves and is built. Who owns what is written in product-design-foundations (How skills stack).
+
 | Skill | Use it when |
 | --- | --- |
 | `product-design-foundations` | Designing, building, prototyping or specifying any screen, component, flow or design system |
@@ -33,7 +35,15 @@ Motion is handled by Emil Kowalski's skills (installed separately, see below). W
 
 Numbers follow Google's Material Design 3 and Apple's Human Interface Guidelines: the major second type scale (1.125) mapped to the platform text styles, the 4px grid with 8 steps for layout, the Material shape scale for radius, platform component metrics, state layers and window size classes. The skills break out only when a specific case really requires it, and the exception is written down with its reason. The values were checked against both live guidelines in November 2026 (Material 3 Expressive, iOS 26 Liquid Glass); they move with each release, and `design-decision-log` covers re-checking them.
 
+## The measured gate
+
+agency-grade-review ships a script that measures a rendered page: contrast in every theme, state and language (sampled where text sits over imagery), type and spacing counts, hit targets, text scaling, a motion inventory and the generic tells of generated work. It is in `skills/agency-grade-review/scripts/` with its own README and a self-test. A clean report is a floor, not proof of a good design.
+
 ## Install
+
+### As a plugin (Claude Code and Cowork)
+
+The repo is a plugin (`.claude-plugin/`), so it installs and updates as one unit, scripts included: in Cowork, Customize, Plugins, Add, Add marketplace, Add from a repository, then the repo's GitHub address. Use either the plugin or the separately saved skills, not both.
 
 ### Claude Code, Cursor, Codex and other agents (via skills.sh)
 
@@ -76,15 +86,23 @@ skills/
   product-ui-patterns/SKILL.md
   product-brand-identity/SKILL.md
   agency-grade-review/SKILL.md
+  agency-grade-review/scripts/   the measured gate: audit.py, measure.js, fixtures, self-test
   kraftwrk-design-style/SKILL.md
   design-decision-log/SKILL.md
 docs/
   agency-visual-patterns.md
 templates/
   DESIGN-DECISIONS.md
+  DESIGN.md
 prompts/
   improve-the-skills.md
   calibrate-taste.md
+evals/
+  README.md
+.claude-plugin/
+  plugin.json
+  marketplace.json
+NOTICE.md
 CHANGELOG.md
 ```
 
@@ -92,7 +110,7 @@ CHANGELOG.md
 
 Two reusable prompts live in `prompts/`:
 
-- `improve-the-skills.md`: an evaluation loop. Claude designs three test briefs using only the skills, reviews its own output with agency-grade-review, treats every finding the skills failed to prevent as a missing rule, studies new sources for the weakest area, and proposes diffs.
+- `improve-the-skills.md`: an evaluation loop. Claude designs three test briefs using only the skills, reviews its own output with agency-grade-review, treats every finding the skills failed to prevent as a missing rule, studies new sources for the weakest area, and proposes diffs. The three briefs and the scores of every pass are kept in `evals/README.md`.
 - `calibrate-taste.md`: taste calibration from Marc's own work. Marc supplies screens he is proud of and screens he would never ship; Claude derives rules and reference notes from the difference.
 
 Run the first every month or after a big project; run the second once, then whenever the portfolio grows.
@@ -101,3 +119,6 @@ Companion skills (not included, install from their own repos):
 
 - Emil Kowalski's skills: https://github.com/emilkowalski/skills (MIT)
 - Vercel agent skills: https://github.com/vercel-labs/agent-skills (MIT)
+- Intent, for strategy, flows, words and handoff: https://github.com/ghaida/intent (CC0)
+
+Not installed, but credited: several rules and audit checks follow ideas published in Impeccable (https://github.com/pbakaus/impeccable, Apache 2.0). See NOTICE.md.

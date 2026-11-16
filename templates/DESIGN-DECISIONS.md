@@ -6,6 +6,8 @@ Format: date, decision in Marc's words, reason, status (active or superseded), t
 
 ## Identity decisions (product-brand-identity, the ten decisions)
 
+In a code project with a DESIGN.md these live there (template in this folder); keep only the dated decisions and the exceptions in this file.
+
 - Canvas:
 - Accent economy:
 - Type voice:
