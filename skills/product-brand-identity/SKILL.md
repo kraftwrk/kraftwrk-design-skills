@@ -235,6 +235,15 @@ Rule: a user working in a quiet zone should be able to forget the brand and stil
 - Protect: the usability floor from product-design-foundations. If a brand colour fails contrast as text, it becomes a surface or accent colour instead, and this is proposed to the brand owner with the measured ratios.
 - Extend: most brand guidelines have no rules for product. Write the product brand sheet and offer it back as an addition to the guidelines.
 
+## Redesigning a product that already has an identity
+
+A redesign starts from what the product already owns. The existing work is the foundation, not the rut.
+
+- Inventory first: list every bespoke part of the current product (devices, signature components, interactions, motion sequences, lockups, voice habits) and what each one does. Get a keep, elevate or change decision per part from the designer before any direction is drawn. Nothing on the list is removed without saying so first, with the reason.
+- Elevate before replacing: for each kept part ask what would make it sharper (clearer job, better craft, live motion). A new device joins the existing ones; it does not take their place. One device on every screen is consistent and monotonous: each key screen keeps or gets its own signature interaction.
+- Options before a build: per key screen show three quick interaction sketches, the current version among them, and let the designer pick.
+- Rules are a floor here. Where a bespoke part breaks a rule in these skills (an eyebrow, a size off the scale, a third weight), keep the part and write the exception. Removing things to pass a check is not design.
+
 ## Deliverables
 
 - Product brand sheet (1 to 2 pages): idea, attributes, type, colour stance, shape, icons, imagery, motion signature, voice, brand moments map.
@@ -259,6 +268,7 @@ Rule: a user working in a quiet zone should be able to forget the brand and stil
 - Voice that changes personality between screens.
 - Imagery from a different universe than the UI (stock photos next to geometric illustration).
 - Marketing hex values used as UI text colours despite failing contrast.
+- A redesign that swaps a product's inventions for one new idea, or strips bespoke parts until the checks pass.
 
 ## Review: does the product feel like itself?
 
