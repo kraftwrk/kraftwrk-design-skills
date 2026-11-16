@@ -28,6 +28,26 @@ Motion: when Emil Kowalski's skills are installed (emil-design-eng, animate, ani
 
 Strategy and structure: when Intent is installed, it works before and after this stack and is never copied into it. Intent owns what is built and why: the project context (intent), the problem (strategize, investigate), flows and navigation (journey, organize), wireframes (wireframe), words (articulate), the state inventory (fortify), the usability review (evaluate) and the handoff package (specify). These skills own how it looks, moves and is built. Order: Intent's context, journey and wireframe first; this stack on top of the wireframes, which are structure only and never a look to keep; agency-grade-review and Intent's evaluate as two reviews in one findings table; Intent's specify for the handoff, with the specification from this file inside it. Where both have a rule (states, flows, accessibility, localisation), Intent's artefact is the plan and the values here are the floor it has to meet. Without Intent, the sections here apply as written.
 
+Intent overrides, when Intent is installed:
+- Values: where Intent and this skill both give a number, this skill is the floor. Touch targets 44pt on iOS, 48dp on Android, 44 for web navigation. Large text for contrast starts at 24px (Intent's reference says 18px, which is wrong). WCAG 2.2 AA. Progress shows after 1 second, not 3. Plan for 40 percent text expansion. UI motion under 300ms, sheets up to 400ms. Navigation has 3 to 5 tabs. Radii come from the Material scale. No centre action button or FAB by default. Intent's indigo #4338ca is never an accent.
+- Intent's visual output (wireframes, blueprints, journey diagrams, the default deck theme of present) is internal structure. It is never shown to a client in Intent's look and never restyled into the visual design: once the structure is agreed, rebuild it in this stack.
+- When Marc steers style inside a wireframe, the steer wins. Treat it as the start of visual design and do not refuse it.
+- Intent's no-narrator rule covers Intent's own artefacts only. Rationale, stand-in marks and honest risks stay in visual work and case studies.
+- Severity: critical becomes Blocker, high or major becomes Major, medium or minor becomes Minor, low or cosmetic becomes Polish. A contrast failure is always a Blocker. evaluate and include write into the single findings table of agency-grade-review, not into evaluation files of their own.
+- specify lists the visual specification from this skill as its own artefact in the handoff contents, despite its line that a handoff holds no visual design.
+- decisions.md lives at the project root. design-decision-log promotes only the entries Marc decided. Entries Intent logs as agent default are never promoted.
+- The writing rules of articulate apply to deliverables, not to conversation with Marc.
+
+Routing, when a request fits more than one skill:
+- Review, critique, rate, is it ready: agency-grade-review leads. evaluate adds usability and dark-pattern findings to the same table.
+- Is this accessible: include runs the audit, with the values here as the floor.
+- Wireframe, lay out, what goes where: wireframe for structure only, then product-ui-patterns and kraftwrk-design-style for the visual pass.
+- Flow, onboarding, checkout: journey. Navigation, IA: organize for structure, this skill for component values.
+- Copy, microcopy, errors: articulate, with the Never list of kraftwrk-design-style on top.
+- Brand, identity, direction: product-brand-identity, never strategize. strategize writes the problem brief first, when there is one.
+- Deck, case study: present for stakeholder and research decks, section 12 of agency-grade-review for case studies and portfolio work, pptx only to edit an existing file.
+- Skip the /intent banner and its context interview unless Marc types /intent. Read context-<product>.md when it exists.
+
 Other visual skill sets: these skills decide direction, type, colour, layout and review. If Impeccable is installed as well, use only its detector as a second opinion on web code and whatever Marc asks of it by name; the rules taken from it already live here (NOTICE.md), and a finding from its detector is an advisory until one of these skills has the rule.
 
 Conflicts: the accessibility floor beats everything. The client system beats this skill on token values and component choice. This skill beats taste when a taste choice would break a rule here. Where Vercel's guidelines conflict with the product's own conventions (for example its case convention), the product wins.
