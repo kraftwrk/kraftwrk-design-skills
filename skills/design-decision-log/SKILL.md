@@ -95,13 +95,14 @@ Confidence is "stated" (Marc gave the reason) or "inferred" (Claude proposed the
 Project decisions:
 
 - A project keeps one decision record. With Intent installed that is Intent's decisions.md, in its entry format (date and decision, decided by, why, rejected, rests on) with a "Departs from" line when a rule or a Material or HIG value is left. Without Intent it is DESIGN-DECISIONS.md at the root of the project's repo or connected folder: date, decision, reason, status (active, superseded), and the rule it departs from if any. Create the file if it does not exist. Never keep both.
+- A kept invention that breaks a rule (a size off the scale, an eyebrow, a third weight, a convention left on purpose) is recorded as an exception: the part, the rule it departs from, the job it does. The review reports recorded exceptions as exceptions, not as findings.
 - A decision that changes the system (a token, the radius logic, the type voice) also updates DESIGN.md when the project has one, so that file always describes the system as it stands. The reason stays in the decision record.
 - When no project folder exists (chat only), write the decision into the project's memory area so the next session in that project sees it, and say so.
 
 General rules:
 
 - In Claude Code or any tool with the kraftwrk-design-skills repo checked out: edit the SKILL.md of the target skill, add a line to CHANGELOG.md (date, skill, rule), and commit with the message "rule: <short rule>". Push when Marc confirms.
-- In Cowork or claude.ai, where skills live in the account: propose the updated skill with the skill review card so Marc saves it, and remind him to copy the same change into the repo (or ask Claude Code to do it) so every tool stays in sync.
+- In Cowork, where the skills run as the kraftwrk-design-skills plugin: make the change in the repo copy, raise the plugin version, and give Marc the patch to apply and push; the plugin picks it up on update. Loose skills in the account (none of these seven) change through the skill review card.
 - Rewrite a failed rule in place; never leave two versions.
 
 ### 6. Report

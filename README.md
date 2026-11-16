@@ -67,7 +67,7 @@ Skills in the Claude app live in your account, not in this repo. Upload each ski
 `design-decision-log` runs at the end of every design session and whenever Marc corrects, overrides or chooses something. It collects the decisions, classifies them, and proposes where each one goes:
 
 - Project-specific (this client's brand, constraints, exceptions): appended to `DESIGN-DECISIONS.md` in the project (template in `templates/`).
-- General (would hold on the next project): a rule with its reason in the right skill. In Claude Code the skill edits the SKILL.md here, logs it in `CHANGELOG.md` and commits; in Cowork it proposes the update with the skill review card, and the same change is copied here so every tool stays in sync.
+- General (would hold on the next project): a rule with its reason in the right skill. In Claude Code the skill edits the SKILL.md here, logs it in `CHANGELOG.md` and commits; in Cowork, where the skills run as this repo's plugin, it changes the repo copy and hands over a patch to apply and push.
 
 Rules are written strictly (values, tokens, always and never), at class level, and only from Marc's own decisions. In Claude Code, Emil's `learn-taste` does the same for code-level corrections; run it first, then `design-decision-log`.
 

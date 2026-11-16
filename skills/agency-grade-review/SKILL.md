@@ -35,8 +35,9 @@ Agency-grade work has all of these at once:
 11. Accessibility by default: WCAG 2.2 AA, keyboard, screen reader, text scaling.
 12. Production readiness: tokens, components, specs. An engineer can build it without guessing.
 13. Finish: nothing accidental. Optical alignment, consistent radii and strokes, pixel-fit icons, balanced headlines, correct punctuation.
-14. Restraint: nothing that could be removed without loss. Decoration only as a documented brand decision.
+14. Restraint: no noise. Nothing stays that nobody would miss, and nothing goes that a user would describe to a friend. Decoration only as a documented brand decision.
 15. Presentation: the work is shown with context, decisions and rationale, in realistic frames, with states and motion, not as a single hero shot.
+16. Invention: each key screen has one thing no template would have given, an interaction, a device or a way of showing the data, and it does a job. The steal test: would another designer want to take it? The job test: is the task faster or clearer with it, or the brand idea carried by it? A screen that is only correct scores 3.
 
 Generic work, the level this skill lifts from, typically shows: default fonts and sizes, random spacing, cards everywhere, blue 600 everywhere, lorem ipsum or perfectly short fake data, happy path only, hover-only states, bouncy or slow motion, no dark mode, a logo-only identity, and a single centred hero shot as presentation.
 
@@ -175,7 +176,7 @@ Run the relevant ones and report results, not impressions.
 
 ## Scoring (Full and Pre-ship modes)
 
-Rate each of the 15 bar items from 1 to 5:
+Rate each of the 16 bar items from 1 to 5:
 5 agency-grade, nothing to fix. 4 minor polish. 3 competent but generic. 2 clear problems. 1 missing or broken.
 
 Report the three lowest scores first; they decide the next iteration. Never average: a 2 anywhere blocks Pre-ship.
@@ -186,7 +187,7 @@ Findings table, ordered by impact:
 
 | # | Finding | Where | Why it matters | Fix (specific values, tokens, copy) | Severity |
 
-Severity is Blocker, Major, Minor or Polish. Blocker: a contrast failure in any theme or state, a missing empty, loading or error state on a dense screen, a state the chrome contradicts, placeholder content, an invented claim presented as real, happy path only. Major: a hit target below the platform floor, a control without an accessible name, type that does not follow the reader's text size, motion without a reduced-motion rule, no motion table for an overlay or transition, a web screen shown at one width, flow steps missing without saying so, no brand moment in an identity direction, stand-in imagery not marked. Minor: a single off-grid value, an orphan, a stray weight, a generic tell without a reason. Polish: taste within the rules.
+Severity is Blocker, Major, Minor or Polish. Blocker: a contrast failure in any theme or state, a missing empty, loading or error state on a dense screen, a state the chrome contradicts, placeholder content, an invented claim presented as real, happy path only. Major: a hit target below the platform floor, a control without an accessible name, type that does not follow the reader's text size, motion without a reduced-motion rule, no motion table for an overlay or transition, a web screen shown at one width, flow steps missing without saying so, no brand moment in an identity direction, stand-in imagery not marked, a key screen with no invention of its own, one device carrying every screen, an interaction that exists only in a table and not live in the prototype, a bespoke part of an existing product removed without the designer's decision. Minor: a single off-grid value, an orphan, a stray weight, a generic tell without a reason. Polish: taste within the rules. A rule-break that the project's decision record lists as an exception, with its reason, is reported as an exception and is not a finding.
 
 Then the three changes that would move the work furthest, one line each. Then scores when in Full or Pre-ship mode.
 
@@ -196,7 +197,7 @@ Be direct and specific. No praise padding. A short note on what is working is us
 
 Before showing any UI Claude produced:
 
-1. Run sections 1 to 11 silently. Fix every Blocker and Major. Fix Minors when cheap.
+1. Run sections 1 to 11 silently. Fix every Blocker and Major. Fix Minors when cheap. A fix never deletes an invention: where the two collide, keep the part and write the exception, or ask.
 2. Run the audit on the rendered output (scripts/audit.py, or the same measurements by script): count, contrast, state and worst-case data tests in both themes, every state and the longest language. No Blocker or Major is left, and every advisory has its answer.
 3. Show the work. Then list in 3 to 6 lines what the self-review changed and any remaining known gaps or assumptions.
 

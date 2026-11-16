@@ -241,7 +241,7 @@ A redesign starts from what the product already owns. The existing work is the f
 
 - Inventory first: list every bespoke part of the current product (devices, signature components, interactions, motion sequences, lockups, voice habits) and what each one does. Get a keep, elevate or change decision per part from the designer before any direction is drawn. Nothing on the list is removed without saying so first, with the reason.
 - Elevate before replacing: for each kept part ask what would make it sharper (clearer job, better craft, live motion). A new device joins the existing ones; it does not take their place. One device on every screen is consistent and monotonous: each key screen keeps or gets its own signature interaction.
-- Options before a build: per key screen show three quick interaction sketches, the current version among them, and let the designer pick.
+- In the option round (kraftwrk-design-style, Creative pass first) the current version is always one of the three.
 - Rules are a floor here. Where a bespoke part breaks a rule in these skills (an eyebrow, a size off the scale, a third weight), keep the part and write the exception. Removing things to pass a check is not design.
 
 ## Deliverables

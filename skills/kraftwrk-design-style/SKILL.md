@@ -15,12 +15,22 @@ If the foundation skills are not installed, say so once and apply the usual indu
 
 ## The signature
 
-1. Subtraction first. Every element earns its place. Before adding, ask what can be removed. One primary action per screen.
+1. Subtraction first. Every element earns its place. Before adding, ask what can be removed. One primary action per screen. Subtraction removes noise, never the idea: an invention that does a job is not decoration.
 2. Hierarchy through type and space, not decoration. Size, weight, spacing and alignment do the work. Boxes, borders, shadows and colour are the last resort.
 3. Swiss discipline. Strong grid, few alignment edges, deliberate whitespace, restrained palette, typography as the main visual material, objectivity over ornament.
 4. Systems thinking. Anything used twice is a pattern with variants and states, never a one-off.
 5. Motion as craft. Fast, interruptible, physically plausible, and always explaining a change. Delight lives in small details (press feedback, a well-timed stagger), never in spectacle.
 6. Production-ready. An engineer can build it without guessing.
+7. One invention per key screen. An interaction, a device or a way of showing the data that no template would have given, and that does a job for the task or the brand idea. Restraint everywhere else is what lets it carry.
+
+## Creative pass first
+
+Creativity is protected by the order of work, not by a rule about taste.
+
+- Options before a build. For every key screen, sketch three ideas for its signature interaction before building anything. One of the three breaks a convention on purpose. Rough and live beats polished and static. Marc picks or mixes; a build without his pick is a draft.
+- Two passes, in this order. The creative pass runs with only the safety floor on: contrast, hit targets, platform conventions, text scaling. The craft pass comes after and applies everything else. It may sharpen an invention; it may not delete one. Where a rule and an invention collide, keep the invention and write the exception (design-decision-log), or bring the conflict to Marc.
+- Novelty needs a job. An idea stays when it makes the task faster or clearer, or carries the brand idea. A gimmick is as generic as a template.
+- Feed it. When references/inspiration/INDEX.md exists, read the index before the option round and open the two to four entries whose tags fit the job. Take the principle behind a reference, never its look.
 
 ## Default choices (when the brief or client system leaves them open)
 
@@ -55,7 +65,7 @@ If the foundation skills are not installed, say so once and apply the usual indu
 ## Working with Marc
 
 - Before designing: confirm the job, user, primary action, platform and design system in one line each. Ask once if something is unclear and decisive; otherwise state the assumption.
-- Design order: structure and hierarchy, then layout, type, colour, motion. Decoration last, if at all.
+- Design order: the options for each key screen, then structure and hierarchy, then layout, type, colour, motion. Decoration last, if at all.
 - Present: the work, then a short rationale (key decisions and trade-offs), open questions, and proposed design system additions. Keep it brief. For case studies and client decks, follow the presentation conventions in agency-grade-review: flat frames on a flat field in rows, one angled hero at most, component close-ups, dense screens included.
 - Steering words: a one-word steer changes only the element or screen Marc named and adds no new colour, face, radius or effect. Bolder: push the carrier the identity already pushes (size, canvas, device) further on that element and quiet what surrounds it. Quieter: remove before reducing; decoration first, then the accent, then one step of weight or size. Tighter and looser: one step on the 4px grid inside the named group, rhythm rule intact. Simpler: remove elements until the remove-one test fails. Polish: no redesign; alignment, rhythm, states, copy and finish only. Harden: worst-case data, every state, the longest language, text at 200 percent. A steer that cannot be done inside the system gets one question naming the addition it needs.
 - Corrections become rules. When Marc corrects, overrides or chooses something, run design-decision-log: project-specific decisions go to the project's decision record, general ones are proposed as rules for this skill (taste), the foundations (values), the patterns, the brand skill or the review skill, each with its reason in Marc's words. Run the end-of-session capture before closing any design session.
