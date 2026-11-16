@@ -2,6 +2,12 @@
 
 Rules added or changed, newest first. Format: date, skill, rule, source.
 
+## 2026-11-16
+
+- agency-grade-review, audit script (no rule text changed): a screen shown a second time at another width (an inert copy with the same `data-screen`) is measured as its own screen and reports only what differs; text that starts on a screen and runs off its side is a Major (`layout.clipped`), and a Major at 200 percent (`a11y.scaling`); a `data-screen` inside another is its backdrop, not a screen; wrapped text is sampled line by line; a single letter has no tracking to check; a link whose image carries `role="img"` and a label has a name; each tell is reported once per screen. Source: the first run of the fresh-reviewer rule. The reviewers measured the narrow copies in German and at 200 percent with their own script and found text cut off that the audit could not see.
+- Correction: the first audit reported a link without a name on Kabaal. That was the script's mistake (it did not read `role="img"` labels), not a finding.
+- evals: after-scores and audit counts for the three test products, see evals/README.md. Findings the rules allowed, kept for the next pass and not yet rules: a state must not show figures it has not loaded (the rule names the chrome, not the header figures); one data model per screen (per item or for all, never both); a gate has to hold for the oldest user it is meant to stop; a narrow layout is checked in the longest language and at 200 percent, not only the wide one.
+
 ## 2026-11-15
 
 - Intent wiring. Intent (installed beside these skills, never copied) owns project context, the problem, flows and navigation, wireframes, words, the state inventory, the usability review and the handoff package; these skills own how the product looks, moves and is built. Order, two reviews in one findings table with one severity scale, one decision record per project (Intent's decisions.md when Intent is installed, DESIGN-DECISIONS.md otherwise), wireframes as structure only. Source: Marc.

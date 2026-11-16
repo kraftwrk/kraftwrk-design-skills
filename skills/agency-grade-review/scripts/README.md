@@ -23,6 +23,7 @@ Severity follows agency-grade-review: Blocker, Major, Minor. An Advisory is a qu
 
 - Screens: each screen root carries `data-screen="name"` and `data-platform="ios"`, `"android"` or `"web"`. Without them the whole page is measured as one web surface, or roots are passed with `--root "#home:ios"`.
 - Switches: every element with `data-set="attribute=value"` and an optional `data-on="selector"` is a switch. `data-theme` switches the theme, `data-state` the state of a screen, `data-lang` the language. The tool finds them and measures every combination.
+- Copies: the same screen shown again at another width (for example a 390 wide copy beside the 1440 one, made inert so it is not read out twice) keeps its `data-screen`. It is measured as its own screen and reports only what differs from the screens before it. A `data-screen` inside another one is that screen's backdrop and is not measured on its own.
 - System chrome: a status bar, home indicator or system keyboard drawn in a mockup carries `data-system` and is left out.
 - Scale: screens render at their real size. If the presentation shrinks them with `zoom`, undo it with `--css`.
 

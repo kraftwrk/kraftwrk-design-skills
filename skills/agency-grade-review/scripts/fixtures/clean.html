@@ -31,6 +31,7 @@ button:active { transform: scale(0.97); }
 @media (prefers-reduced-motion: reduce) { button { transition: none; } }
 .switches { margin-top: 3rem; display: flex; gap: 0.5rem; }
 .switches button { margin-top: 0; }
+.narrow { width: 22.5rem; margin-top: 4rem; }
 </style>
 </head>
 <body>
@@ -55,5 +56,10 @@ button:active { transform: scale(0.97); }
     <button type="button" data-set="data-state=error" data-on="[data-screen]">Error</button>
   </div>
 </main>
+<div class="narrow" inert aria-hidden="true"></div>
+<script>
+// the same screen again at 360 wide: an inert copy, measured as its own screen
+document.querySelector('.narrow').appendChild(document.querySelector('[data-screen]').cloneNode(true));
+</script>
 </body>
 </html>

@@ -38,7 +38,7 @@
       if (el.closest(SKIP)) return true;
       for (let n = el; n && n !== root.parentElement; n = n.parentElement) {
         const cs = getComputedStyle(n);
-        if (cs.display === 'none' || cs.visibility === 'hidden' || n.hasAttribute('inert')) return true;
+        if (cs.display === 'none' || cs.visibility === 'hidden' || (n !== root && n.hasAttribute('inert'))) return true;
       }
       return false;
     };
@@ -72,6 +72,13 @@
       const box = rects.reduce((a, r) => ({ l: Math.min(a.l, r.left), t: Math.min(a.t, r.top), r: Math.max(a.r, r.right), b: Math.max(a.b, r.bottom) }), { l: 1e9, t: 1e9, r: -1e9, b: -1e9 });
       const overMedia = media.some(({ m, r }) => !m.contains(el) && !el.contains(m) && Math.min(box.r, r.right) - Math.max(box.l, r.left) > (box.r - box.l) * 0.3 && Math.min(box.b, r.bottom) - Math.max(box.t, r.top) > (box.b - box.t) * 0.3);
       const fgc = over({ r: fg.r, g: fg.g, b: fg.b, a: fg.a * op }, bg.c);
+      // text that starts on the screen and runs off its side, outside a sideways scroller
+      // What an element of its own clips or scrolls (an ellipsis, a rail) is not counted: only what is left of the text after that.
+      if (box.l < rr.right - 1 && box.r > rr.left + 1 && (box.r > rr.right + 1 || box.l < rr.left - 1) && !el.closest('[aria-hidden="true"]:not([inert])')) {
+        let l = box.l, r = box.r;
+        for (let n = el; n && n !== root; n = n.parentElement) { if (getComputedStyle(n).overflowX !== 'visible') { const q = n.getBoundingClientRect(); l = Math.max(l, q.left); r = Math.min(r, q.right); } }
+        if (r > l && (r > rr.right + 1 || l < rr.left - 1)) out.clipped.push({ where: label(el), s: s.slice(0, 40), edge: true });
+      }
       const run = { s: s.slice(0, 48), txt: s, code: !!el.closest('code,pre,kbd,samp'), dis: !!el.closest('[disabled],[aria-disabled="true"],[aria-busy="true"]'), it: cs.fontStyle === 'italic', n: s.length, fs, fw, fam, lh, ls: fs ? Math.round((ls / fs) * 1000) / 1000 : 0, upper, tag: el.tagName.toLowerCase(), where: label(el), col: [fg.r, fg.g, fg.b, +(fg.a * op).toFixed(2)], bg: [Math.round(bg.c.r), Math.round(bg.c.g), Math.round(bg.c.b)], ratio: +contrast(fgc, bg.c).toFixed(2), large: fs >= 24 || (fs >= 18.66 && fw >= 700), lines: 0 };
       let id = el.getAttribute('data-audit-id'); if (!id) { window.__auditUid = (window.__auditUid || 0) + 1; id = 'a' + window.__auditUid; el.setAttribute('data-audit-id', id); }
       run.id = id; run.over = bg.img || overMedia;
@@ -147,7 +154,7 @@
         l = Math.min(l, num(p.left)); r = Math.max(r, el.offsetWidth - num(p.right)); tt = Math.min(tt, num(p.top)); b = Math.max(b, el.offsetHeight - num(p.bottom));
       }
       const inlineText = cs.display === 'inline' && el.parentElement && el.parentElement.textContent.trim().length - el.textContent.trim().length >= 20;
-      const name = (el.getAttribute('aria-label') || (el.getAttribute('aria-labelledby') ? 'x' : '') || el.getAttribute('title') || (el.innerText || '').replace(/\s+/g, ' ').trim() || (el.querySelector('img[alt]:not([alt=""])') ? 'x' : '') || (el.querySelector('svg title') ? 'x' : '') || el.getAttribute('value') || '').trim();
+      const name = (el.getAttribute('aria-label') || (el.getAttribute('aria-labelledby') ? 'x' : '') || el.getAttribute('title') || (el.innerText || '').replace(/\s+/g, ' ').trim() || (el.querySelector('img[alt]:not([alt=""]), [role=img][aria-label], svg[aria-label]') ? 'x' : '') || (el.querySelector('svg title') ? 'x' : '') || el.getAttribute('value') || '').trim();
       const field = el.matches('input:not([type=submit]):not([type=button]),select,textarea');
       const labelled = !field || el.getAttribute('aria-label') || el.getAttribute('aria-labelledby') || el.closest('label') || (el.id && document.querySelector('label[for="' + el.id + '"]'));
       if (!field && !name) out.names.push({ where: label(el), v: 'no accessible name' });

@@ -82,6 +82,7 @@ RULES = {
 }
 ORDER = {"Blocker": 0, "Major": 1, "Minor": 2, "Advisory": 3}
 FACES = defaultdict(list)
+TOLD = set()
 
 
 def lum(c):
@@ -106,25 +107,32 @@ def ms(v):
 
 class Report:
     def __init__(self):
-        self.items, self.seen = [], set()
+        self.items, self.seen, self.tails, self.copies = [], set(), set(), []
 
     def add(self, sev, rule, where, what):
         key = (rule, where, what)
         if key in self.seen:
             return
         self.seen.add(key)
+        # a copy of a screen at another width only reports what differs from the screens before it
+        root = next((r for r in self.copies if where == r or where.startswith(r + " ")), None)
+        tail = (rule, where[len(root):] if root else where.split(" ", 1)[1] if " " in where else "", what)
+        if root and tail in self.tails:
+            return
+        self.tails.add(tail)
         self.items.append({"severity": sev, "rule": rule, "where": where, "finding": what})
 
 
 def sample(page, run):
     """Contrast of a text run against the pixels under it: hide the text, read the render."""
     q = '[data-audit-id="%s"]' % run["id"]
-    box = page.evaluate("""([q, txt]) => { const el = document.querySelector(q); if (!el) return null; el.setAttribute('data-audit-hide', ''); el.scrollIntoView({block: 'center'});
+    boxes = page.evaluate("""([q, txt]) => { const el = document.querySelector(q); if (!el) return null; el.setAttribute('data-audit-hide', ''); el.scrollIntoView({block: 'center'});
         const node = [...el.childNodes].find(n => n.nodeType === 3 && n.nodeValue.replace(/\\s+/g, ' ').trim() === txt) || el;
         for (let n = el.parentElement; n && n !== document.body; n = n.parentElement) n.style.setProperty('text-decoration-color', 'transparent', 'important');
-        const er = el.getBoundingClientRect(), r = document.createRange(); r.selectNodeContents(node); const b = r.getBoundingClientRect();
-        return {x: b.left - er.left, y: b.top - er.top, w: b.width, h: b.height}; }""", [q, run["txt"]])
-    if not box or box["w"] < 1 or box["h"] < 1:
+        const er = el.getBoundingClientRect(), r = document.createRange(); r.selectNodeContents(node);
+        // one box per line: a run that wraps shares its second line with its neighbours
+        return [...r.getClientRects()].filter(b => b.width >= 1 && b.height >= 1).map(b => ({x: b.left - er.left, y: b.top - er.top, w: b.width, h: b.height})); }""", [q, run["txt"]])
+    if not boxes:
         return None
     try:
         png = page.locator(q).first.screenshot(timeout=4000)
@@ -133,13 +141,19 @@ def sample(page, run):
     finally:
         page.evaluate("q => { const el = document.querySelector(q); if (!el) return; el.removeAttribute('data-audit-hide'); for (let n = el.parentElement; n && n !== document.body; n = n.parentElement) n.style.removeProperty('text-decoration-color'); }", q)
     im = Image.open(io.BytesIO(png)).convert("RGB")
-    crop = im.crop((max(0, int(box["x"])), max(0, int(box["y"])), min(im.width, int(box["x"] + box["w"]) + 1), min(im.height, int(box["y"] + box["h"]) + 1)))
-    if crop.width < 1 or crop.height < 1:
-        return None
-    crop.thumbnail((160, 160))
     fg, a = run["col"][:3], run["col"][3]
-    raw = crop.tobytes()
-    vals = sorted(ratio([fg[i] * a + raw[j + i] * (1 - a) for i in range(3)], raw[j:j + 3]) for j in range(0, len(raw), 3))
+    vals = []
+    for box in boxes:
+        x0, y0, x1, y1 = max(0, int(box["x"])), max(0, int(box["y"])), min(im.width, int(box["x"] + box["w"]) + 1), min(im.height, int(box["y"] + box["h"]) + 1)
+        if x1 - x0 < 1 or y1 - y0 < 1:
+            continue
+        crop = im.crop((x0, y0, x1, y1))
+        crop.thumbnail((160, 160))
+        raw = crop.tobytes()
+        vals += [ratio([fg[i] * a + raw[j + i] * (1 - a) for i in range(3)], raw[j:j + 3]) for j in range(0, len(raw), 3)]
+    if not vals:
+        return None
+    vals.sort()
     return vals[int(len(vals) * 0.02)]
 
 
@@ -224,7 +238,7 @@ def typography(rep, sel, platform, d):
     seen = set()
     for r in runs:
         key = (r["fs"], r["ls"], r["upper"], r["fam"])
-        if key in seen or SYSTEM.match(r["fam"]) or re.search(r"mono|code", r["fam"], re.I):
+        if key in seen or r["n"] < 2 or SYSTEM.match(r["fam"]) or re.search(r"mono|code", r["fam"], re.I):
             continue
         seen.add(key)
         fs, ls, where = r["fs"], r["ls"], sel + " " + r["where"]
@@ -301,7 +315,8 @@ def details(rep, sel, platform, d):
     names = {"side-stripe": ("Minor", "a thick coloured border on one side"), "border-shadow-tint": ("Minor", "border, shadow and tint together"), "gradient-text": ("Advisory", "gradient text"), "glow": ("Advisory", "a coloured glow"), "hard-shadow": ("Advisory", "a hard offset shadow"), "stripes": ("Advisory", "repeating stripes: a decision when they encode data, a reflex as decoration")}
     for tid, (sev, what) in names.items():
         hits = [t for t in d["tells"] if t["id"] == tid]
-        if hits:
+        if hits and (sel, tid) not in TOLD:
+            TOLD.add((sel, tid))
             rep.add(sev, "layout.cards" if tid == "border-shadow-tint" else "identity.tell", sel, "%s on %d element%s, for example %s (%s)" % (what, len(hits), "" if len(hits) == 1 else "s", hits[0]["where"], hits[0]["v"]))
     floor = FLOOR[platform]
     for t in d["targets"]:
@@ -311,7 +326,8 @@ def details(rep, sel, platform, d):
         sev = "Minor" if platform == "web" and low >= 24 else "Major"
         rep.add(sev, "target.size", sel + " " + t["where"], "\"%s\" is %dx%d, floor %d" % (t["name"], t["w"], t["h"], floor))
     for n in d["names"]:
-        rep.add("Major", "a11y.name", sel + " " + n["where"], n["v"])
+        if sel not in rep.copies:
+            rep.add("Major", "a11y.name", sel + " " + n["where"], n["v"])
     lv = d["levels"]
     for a, b in zip(lv, lv[1:]):
         if b > a + 1:
@@ -415,7 +431,9 @@ def main():
                 page.evaluate("t => document.documentElement.setAttribute('data-theme', t)", theme)
             roots = [(r.rsplit(":", 1) if re.search(r":(ios|android|web)$", r) else [r, "web"]) for r in a.root]
             if not roots:
-                roots = page.evaluate("""() => [...document.querySelectorAll('[data-screen]')].map((e, i) => { e.setAttribute('data-audit-root', i); return ['[data-audit-root="' + i + '"]', e.dataset.platform || 'web']; })""") or [["body", "web"]]
+                roots = page.evaluate("""() => [...document.querySelectorAll('[data-screen]')].filter(e => !e.parentElement.closest('[data-screen]')).map((e, i) => { e.setAttribute('data-audit-root', i); return ['[data-audit-root="' + i + '"]', e.dataset.platform || 'web']; })""") or [["body", "web"]]
+            # a screen shown a second time at another width (an inert copy) is measured too
+            rep.copies = [sel for sel, _ in roots if page.evaluate("s => { const e = document.querySelector(s); return !!(e && e.closest('[inert]')); }", sel)]
             cache = {}
             for ri, (sel, platform) in enumerate(roots):
                 base = page.evaluate(FN % (SRC, "screen"), {"sel": sel, "key": "r%d" % ri, "skip": a.skip})
@@ -429,7 +447,7 @@ def main():
                     if s["attr"] != "data-theme" and page.evaluate("([on, sel]) => { const r = document.querySelector(sel); return [...document.querySelectorAll(on)].some(e => e === r || e.contains(r) || r.contains(e)); }", [s["on"], sel]):
                         if s["val"] not in groups[(s["attr"], s["on"])]:
                             groups[(s["attr"], s["on"])].append(s["val"])
-                clipped = {(c["where"], c["s"]): "" for c in base["clipped"]}
+                clipped = {(c["where"], c["s"], bool(c.get("edge"))): "" for c in base["clipped"]}
                 for (attr, on), vals in groups.items():
                     cur = page.evaluate("([on, attr]) => document.querySelector(on).getAttribute(attr)", [on, attr])
                     for v in vals:
@@ -440,7 +458,7 @@ def main():
                         d = page.evaluate(FN % (SRC, "screen"), {"sel": sel, "key": "r%d" % ri, "skip": a.skip})
                         contrast(page, rep, sel, d, theme, var, cache, known)
                         for c in d["clipped"]:
-                            clipped.setdefault((c["where"], c["s"]), var)
+                            clipped.setdefault((c["where"], c["s"], bool(c.get("edge"))), var)
                         if ti == 0:
                             details(rep, sel, platform, d)
                     page.evaluate("([on, attr, v]) => document.querySelectorAll(on).forEach(e => v === null ? e.removeAttribute(attr) : e.setAttribute(attr, v))", [on, attr, cur])
@@ -450,8 +468,8 @@ def main():
                 structure(rep, sel, platform, base, {float(x) for x in a.allow.split(",") if x} | ({34.0} if platform == "ios" else set()))
                 details(rep, sel, platform, base)
                 canvas(rep, sel, base)
-                for (where, s), var in clipped.items():
-                    rep.add("Minor", "layout.clipped", sel + " " + where, "\"%s\" is cut off%s" % (s, " in " + var if var else ""))
+                for (where, s, edge), var in clipped.items():
+                    rep.add("Major" if edge else "Minor", "layout.clipped", sel + " " + where, "\"%s\" %s%s" % (s, "runs off the side of the screen" if edge else "is cut off", " in " + var if var else ""))
                 states = [v for (attr, on), vals in groups.items() if attr == "data-state" for v in vals]
                 facts[sel] = {"platform": platform, "text runs": len(base["runs"]), "sizes": sorted({round(r["fs"], 1) for r in base["runs"]}), "families": sorted({r["fam"] for r in base["runs"]}), "states": states, "truncated": base["truncated"]}
                 if states and not {"empty", "loading", "error"} & set(states):
@@ -467,8 +485,8 @@ def main():
                     rep.add("Major", "a11y.scaling", sel, "text grows x%.2f when the reader doubles the default size: the type is set in px" % grew)
                 else:
                     for c in big["clipped"]:
-                        if (c["where"], c["s"]) not in clipped:
-                            rep.add("Major", "a11y.scaling", sel + " " + c["where"], "\"%s\" is cut off at 200 percent" % c["s"])
+                        if (c["where"], c["s"], bool(c.get("edge"))) not in clipped:
+                            rep.add("Major", "a11y.scaling", sel + " " + c["where"], "\"%s\" %s at 200 percent" % (c["s"], "runs off the side of the screen" if c.get("edge") else "is cut off"))
                 if info.get("accent") and Image is not None:
                     try:
                         im = Image.open(io.BytesIO(page.locator(sel).first.screenshot(timeout=5000))).convert("RGB")

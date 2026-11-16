@@ -30,6 +30,10 @@ h4 { font-size: 16px; margin-top: 8px; margin-bottom: 24px; }
 .card .card { border-radius: 12px; width: 300px; }
 .r16 { border-radius: 16px; background: #ddd; width: 120px; height: 60px; } .r28 { border-radius: 28px; background: #ddd; width: 160px; height: 80px; }
 .clip { width: 120px; overflow: hidden; white-space: nowrap; }
+.off { margin-left: calc(100% - 80px); white-space: nowrap; }
+.narrow { width: 200px; }
+.narrow section { overflow: hidden; }
+.fits { white-space: nowrap; }
 .tiny { display: inline-block; height: 20px; font-size: 12px; line-height: 20px; }
 .icon { width: 44px; height: 44px; }
 .slow { transition: all 600ms ease-in; }
@@ -62,6 +66,7 @@ h4 { font-size: 16px; margin-top: 8px; margin-bottom: 24px; }
   <div class="card">Outer card with border, shadow and tint.<div class="card">Inner card.</div></div>
   <div class="r16">sixteen</div><div class="r28">twenty-eight</div>
   <p class="clip">This text is cut off without a truncation rule</p>
+  <p class="off">This line starts on the screen and runs off its right side</p>
   <a href="#" class="tiny">Tiny link</a>
   <button class="icon slow"><svg width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="8"/></svg></button>
   <button class="icon boing lift" aria-label="Lift"></button>
@@ -74,5 +79,11 @@ h4 { font-size: 16px; margin-top: 8px; margin-bottom: 24px; }
 <section data-screen="flat" data-platform="web">
   <p class="s20">Twenty.</p><p class="s18">Eighteen.</p><p>Sixteen is the body size and carries most of the text here.</p>
 </section>
+<div class="narrow" inert aria-hidden="true">
+<section data-screen="flat" data-platform="web">
+  <p class="s20">Twenty.</p><p class="s18">Eighteen.</p><p>Sixteen is the body size and carries most of the text here.</p>
+  <p class="fits">A line that fits the wide screen and runs off the narrow copy of it.</p>
+</section>
+</div>
 </body>
 </html>
